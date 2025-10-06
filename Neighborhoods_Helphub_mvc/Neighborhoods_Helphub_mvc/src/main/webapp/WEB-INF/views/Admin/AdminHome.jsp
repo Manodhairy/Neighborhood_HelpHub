@@ -66,7 +66,7 @@
                     <div class="col-12">
                         <div class="page-title-head d-flex align-items-sm-center flex-sm-row flex-column">
                             <div class="flex-grow-1">
-                                <h4 class="fs-18 fw-semibold m-0">Welcome back, Dr. Gulati 👋</h4>
+                                <h4 class="fs-18 fw-semibold m-0">Welcome back, ${AdminName}</h4>
                             </div>
                             <div class="mt-3 mt-sm-0">
                                 <form action="javascript:void(0);">
@@ -183,7 +183,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="d-flex card-header justify-content-between align-items-center">
-                                <h4 class="header-title">All Appointments</h4>
+                                <h4 class="header-title">All Member</h4>
                                 <a href="#" class="btn btn-sm btn-secondary">Add New <i class="ti ti-plus ms-1"></i></a>
                             </div>
                             <div class="card-body p-0">

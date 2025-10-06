@@ -280,8 +280,8 @@
 								<i class="ti ti-user-circle fs-1 me-lg-2 d-flex"></i>
 
                                 <span class="d-lg-flex flex-column gap-1 d-none">
-                                    <h5 class="my-0">Dhanoo K.</h5>
-                                    <h6 class="my-0 fw-normal">Premium</h6>
+                                    <h5 class="my-0">${AdminName}</h5>
+                                    <h6 class="my-0 fw-normal">Chairman</h6>
                                 </span>
                                
                             </a>

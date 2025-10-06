@@ -1,5 +1,7 @@
 package com.nh.Neighborhoods_Helphub_mvc.Controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +23,11 @@ public class UserController {
 	
 	
 	@GetMapping("/ViewAllData")
-	public String viewAllData(Model m) {
+	public String viewAllData(Model m,HttpSession hs) {
 		users[] list=as.viewAllData();
+		
+		String adminName=(String) hs.getAttribute("AdminName");
+		m.addAttribute("AdminName",adminName);
 		m.addAttribute("user",list);
 		return "Admin/AdminHome";
 	}

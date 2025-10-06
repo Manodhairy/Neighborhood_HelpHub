@@ -9,7 +9,7 @@ public class HomeController {
 	
 	@GetMapping("/")
 	private String demo() {
-        return "redirect:/ViewAllData";
+        return "Login/LoginForm";
 	}
 	
 	@GetMapping("/adminHome")
