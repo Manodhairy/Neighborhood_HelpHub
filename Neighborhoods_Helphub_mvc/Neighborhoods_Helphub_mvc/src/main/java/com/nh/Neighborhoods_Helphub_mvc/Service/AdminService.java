@@ -42,4 +42,21 @@ public class AdminService {
 		
 	}
 
+
+	public Long totalmember() {
+		return ai.totalmember();
+		
+	}
+
+
+	public Long ActiveMember() {
+	   return	ai.ActiveMember();
+		
+	}
+
+
+	public Long InactiveMember() {
+       return  ai.InactiveMember();		
+	}
+
 }

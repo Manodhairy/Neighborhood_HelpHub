@@ -17,6 +17,8 @@
 
   <!-- Icons css -->
   <link href="resources/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
   <style>
     .form-container {
@@ -57,6 +59,7 @@
 
 <body>
 
+	
   <div class="auth-bg d-flex min-vh-100 justify-content-center align-items-center">
     <div class="row g-0 justify-content-center w-100 m-xxl-5 px-xxl-4 m-3">
       <div class="col-xl-4 col-lg-5 col-md-6">
@@ -73,18 +76,18 @@
           <div class="form-container">
 
             <!-- USER LOGIN FORM -->
-            <form id="userForm" class="form-slide user-form active text-start mb-3">
+            <form id="userForm" class="form-slide user-form active text-start mb-3" action="UserLogin" method="post">
               <div class="mb-3">
                 <label class="form-label">Full Name</label>
-                <input type="text" class="form-control" placeholder="Enter your Name">
+                <input type="text" class="form-control" placeholder="Enter your Name" name="fullName">
               </div>
               <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control" placeholder="Enter your email">
+                <input type="email" class="form-control" placeholder="Enter your email" name="email">
               </div>
               <div class="mb-3">
                 <label class="form-label">Password</label>
-                <input type="password" class="form-control" placeholder="Enter your password">
+                <input type="password" class="form-control" placeholder="Enter your password" name="password">
               </div>
               <div class="d-flex justify-content-between mb-3">
                 <div class="form-check">
@@ -129,10 +132,7 @@
           <!-- SWITCH BUTTON -->
           <button id="switchBtn" class="switch-btn">Switch to Admin Login</button>
 
-          <p class="mt-auto mb-0">
-            <script>document.write(new Date().getFullYear())</script> © Osen - By 
-            <span class="fw-bold text-decoration-underline text-uppercase text-reset fs-12">Coderthemes</span>
-          </p>
+         
         </div>
       </div>
     </div>
@@ -176,6 +176,25 @@
       isUser = !isUser;
     });
   </script>
+  
+  <script>
+    // Check if error message is present from Spring controller
+    <% 
+       String error = (String) request.getAttribute("error");
+       if (error != null) { 
+    %>
+        Swal.fire({
+          icon: 'error',
+          title: 'Invalid User',
+          text: '<%= error %>',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'OK'
+        });
+    <% 
+       } 
+    %>
+  </script>
+
 
 </body>
 </html>

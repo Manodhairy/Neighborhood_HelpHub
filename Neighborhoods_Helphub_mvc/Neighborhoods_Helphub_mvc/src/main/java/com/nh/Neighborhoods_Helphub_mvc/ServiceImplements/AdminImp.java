@@ -45,4 +45,22 @@ public class AdminImp {
 		
 	}
 
+
+	public Long totalmember() {
+		return  rt.getForObject(baseUrl +"totalmember", Long.class);
+		
+	}
+
+
+	public Long ActiveMember() {
+		return rt.getForObject(baseUrl + "activemember", Long.class);
+		
+	}
+
+
+	public Long InactiveMember() {
+		return rt.getForObject(baseUrl + "inactivemember", Long.class);
+		
+	}
+
 }

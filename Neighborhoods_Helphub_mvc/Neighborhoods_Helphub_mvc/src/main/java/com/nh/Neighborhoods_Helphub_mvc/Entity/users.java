@@ -3,7 +3,7 @@ package com.nh.Neighborhoods_Helphub_mvc.Entity;
 public class users {
     
 	private int id;
-	private String full_name;
+	private String fullName;
 	private String email;
 	private String password;
 	private String mobile_no;
@@ -18,14 +18,12 @@ public class users {
 	
 	public users() {}
 
-	
-
-	public users(int id, String full_name, String email, String password, String mobile_no, String flat_no, String age,
+	public users(int id, String fullName, String email, String password, String mobile_no, String flat_no, String age,
 			String gender, String relation_to_head, String occupation, String adhar_no, String member_status,
 			String date) {
 		super();
 		this.id = id;
-		this.full_name = full_name;
+		this.fullName = fullName;
 		this.email = email;
 		this.password = password;
 		this.mobile_no = mobile_no;
@@ -39,20 +37,6 @@ public class users {
 		this.date = date;
 	}
 
-
-
-	public String getDate() {
-		return date;
-	}
-
-
-
-	public void setDate(String date) {
-		this.date = date;
-	}
-
-
-
 	public int getId() {
 		return id;
 	}
@@ -61,12 +45,12 @@ public class users {
 		this.id = id;
 	}
 
-	public String getFull_name() {
-		return full_name;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setFull_name(String full_name) {
-		this.full_name = full_name;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getEmail() {
@@ -148,7 +132,17 @@ public class users {
 	public void setMember_status(String member_status) {
 		this.member_status = member_status;
 	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
 	
+
 	
 	
 	

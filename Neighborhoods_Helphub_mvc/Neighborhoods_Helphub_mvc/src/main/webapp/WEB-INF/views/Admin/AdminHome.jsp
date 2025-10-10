@@ -96,25 +96,16 @@
                         <div class="card">
                             <div class="card-body">
                                 <a href="#!" class="text-muted float-end mt-n1 fs-18"><i class="ti ti-external-link"></i></a>
-                                <h5 class="text-muted fs-13 text-uppercase" title="Number of Orders">Appointments</h5>
+                                <h5 class="text-muted fs-13 text-uppercase" title="Number of Orders">Member</h5>
                                 <div class="d-flex align-items-center gap-2 my-3">
                                     <div class="avatar-md flex-shrink-0">
                                         <span class="avatar-title bg-primary-subtle text-primary rounded fs-22">
-                                            <i class="ti ti-calendar-week"></i>
+                                            <i class="ti ti-users"></i>
                                         </span>
                                     </div>
-                                    <h3 class="mb-0 fw-bold">185 <span class="badge text-bg-success fw-medium ms-2 fs-12">Today</span></h3>
+                                    <h3 class="mb-0 fw-bold">${TotalMember} </h3>
                                 </div>
-                                <p class="mb-1">
-                                    <span class="text-primary me-1"><i class="ti ti-point-filled"></i></span>
-                                    <span class="text-nowrap text-muted">New Appointments</span>
-                                    <span class="float-end"><b>125</b></span>
-                                </p>
-                                <p class="mb-0">
-                                    <span class="text-primary me-1"><i class="ti ti-point-filled"></i></span>
-                                    <span class="text-nowrap text-muted">Total Appointments</span>
-                                    <span class="float-end"><b>89.5k</b></span>
-                                </p>
+                                
                             </div>
                         </div>
                     </div><!-- end col -->
@@ -123,25 +114,16 @@
                         <div class="card">
                             <div class="card-body">
                                 <a href="#!" class="text-muted float-end mt-n1 fs-18"><i class="ti ti-external-link"></i></a>
-                                <h5 class="text-muted fs-13 text-uppercase" title="Number of Orders">Total Patients</h5>
+                                <h5 class="text-muted fs-13 text-uppercase" title="Number of Orders">Total Active Member</h5>
                                 <div class="d-flex align-items-center gap-2 my-3">
                                     <div class="avatar-md flex-shrink-0">
                                         <span class="avatar-title bg-primary-subtle text-primary rounded fs-22">
                                             <i class="ti ti-users"></i>
                                         </span>
                                     </div>
-                                    <h3 class="mb-0 fw-bold">75.6K</h3>
+                                    <h3 class="mb-0 fw-bold">${ActiveMember}</h3>
                                 </div>
-                                <p class="mb-1">
-                                    <span class="text-primary me-1"><i class="ti ti-minus"></i></span>
-                                    <span class="text-nowrap text-muted">New Patients</span>
-                                    <span class="float-end"><b>61</b></span>
-                                </p>
-                                <p class="mb-0">
-                                    <span class="text-primary me-1"><i class="ti ti-minus"></i></span>
-                                    <span class="text-nowrap text-muted">Old Patients</span>
-                                    <span class="float-end"><b>75.5K</b></span>
-                                </p>
+                               
                             </div>
                         </div>
                     </div><!-- end col -->
@@ -154,25 +136,16 @@
                         <div class="card">
                             <div class="card-body">
                                 <a href="#!" class="text-muted float-end mt-n1 fs-18"><i class="ti ti-external-link"></i></a>
-                                <h5 class="text-muted fs-13 text-uppercase" title="Number of Orders">Treatments</h5>
+                                <h5 class="text-muted fs-13 text-uppercase" title="Number of Orders">Inactive Member</h5>
                                 <div class="d-flex align-items-center gap-2 my-3">
                                     <div class="avatar-md flex-shrink-0">
                                         <span class="avatar-title bg-primary-subtle text-primary rounded fs-22">
                                             <i class="ti ti-health-recognition"></i>
                                         </span>
                                     </div>
-                                    <h3 class="mb-0 fw-bold">99.87K</h3>
+                                    <h3 class="mb-0 fw-bold">${InactiveMember}</h3>
                                 </div>
-                                <p class="mb-1">
-                                    <span class="text-primary me-1"><i class="ti ti-point-filled"></i></span>
-                                    <span class="text-nowrap text-muted">Operations</span>
-                                    <span class="float-end"><b>20.69k</b></span>
-                                </p>
-                                <p class="mb-0">
-                                    <span class="text-primary me-1"><i class="ti ti-point-filled"></i></span>
-                                    <span class="text-nowrap text-muted">General</span>
-                                    <span class="float-end"><b>79.18k</b></span>
-                                </p>
+                                
                             </div>
                         </div>
                     </div><!-- end col -->
@@ -210,7 +183,7 @@
 										<tbody>
 										    <c:forEach var="member" items="${user}">
 										      <tr class="text-uppercase fs-12">
-										        <td>${member.full_name}</td>
+										        <td>${member.fullName}</td>
 										        <td>${member.email}</td>
 										        <td>${member.mobile_no}</td>
 										        <td>${member.flat_no}</td>

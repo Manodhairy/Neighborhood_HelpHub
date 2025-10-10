@@ -25,6 +25,13 @@ public class UserController {
 	@GetMapping("/ViewAllData")
 	public String viewAllData(Model m,HttpSession hs) {
 		users[] list=as.viewAllData();
+		 long totalMember= as.totalmember();
+		long activeMember= as.ActiveMember();
+		long inactivemmeber=as.InactiveMember();
+		
+		m.addAttribute("TotalMember",totalMember);
+		m.addAttribute("ActiveMember",activeMember);
+		m.addAttribute("InactiveMember",inactivemmeber);
 		
 		String adminName=(String) hs.getAttribute("AdminName");
 		m.addAttribute("AdminName",adminName);

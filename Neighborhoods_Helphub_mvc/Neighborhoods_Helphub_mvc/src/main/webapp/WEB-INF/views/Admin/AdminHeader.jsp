@@ -86,30 +86,19 @@
                            
                         </a>
                     </li>
+					
+					
+					<li class="side-nav-item">
+					        <a href="logout" class="side-nav-link">
+					             <span class="menu-icon"><i class="ti ti-wallet"></i></span>
+					             <span class="menu-text"> logout</span>
+					                           
+					         </a>
+					     </li>
 
                    
 
-                    <li class="side-nav-item">
-                        <a data-bs-toggle="collapse" href="#sidebarPricing" aria-expanded="false" aria-controls="sidebarPricing" class="side-nav-link">
-                            <span class="menu-icon"><i class="ti ti-receipt-2"></i></span>
-                            <span class="menu-text"> Pricing</span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <div class="collapse" id="sidebarPricing">
-                            <ul class="sub-menu">
-                                <li class="side-nav-item">
-                                    <a href="pages-pricing.html" class="side-nav-link">
-                                        <span class="menu-text">Pricing One</span>
-                                    </a>
-                                </li>
-                                <li class="side-nav-item">
-                                    <a href="pages-pricing-two.html" class="side-nav-link">
-                                        <span class="menu-text">Pricing Two</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    
 
                    
                                     </div>

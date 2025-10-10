@@ -80,7 +80,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="full_name" class="form-label">Full Name</label>
-                                    <input type="text" id="full_name" name="full_name" class="form-control" placeholder="Enter full name">
+                                    <input type="text" id="full_name" name="fullName" class="form-control" placeholder="Enter full name">
                                 </div>
 
                                 <div class="mb-3">
