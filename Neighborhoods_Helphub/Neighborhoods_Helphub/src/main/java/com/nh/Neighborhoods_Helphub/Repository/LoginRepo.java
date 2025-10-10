@@ -11,6 +11,8 @@ public interface LoginRepo extends JpaRepository<Admin, Integer>{
 
 	
 	Admin findByAdminNameAndAdminEmailAndPassword(String adminName, String adminEmail, String password);
+
+     
   
 
 

@@ -45,4 +45,21 @@ public class UsersService {
 	    }
 		
 	}
+
+	public long totalMember() {
+		long count=ur.count();
+		return count;
+		
+	}
+
+	public long ActiveMember() {
+		long count=ur.countByMemberStatus("active");
+		  return count;
+		
+	}
+
+	public long inactivemember() {
+		  long count=  ur.countByMemberStatus("inactive");
+		return count;
+	}
 }
