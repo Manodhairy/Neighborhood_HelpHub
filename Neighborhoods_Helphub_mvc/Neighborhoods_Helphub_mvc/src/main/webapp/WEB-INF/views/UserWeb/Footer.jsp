@@ -9,7 +9,7 @@
                   class="d-block font-weight-normal line-height-1 text-color-light"
                   >ADDRESS</span
                 >
-                Melbourne, 121 King St, Australia
+                 Sunshine Heights, sangola
               </li>
               <li class="pb-1 mb-2">
                 <span
@@ -26,19 +26,13 @@
                 <a
                   href="https://www.okler.net/cdn-cgi/l/email-protection#9bf6faf2f7dbfee3faf6ebf7feb5f8f4f6"
                   ><span
-                    class="__cf_email__"
+                    class=""
                     data-cfemail="630e020a0f23061b020e130f064d000c0e"
-                    >[email&#160;protected]</span
+                    >sunshineheights@gmail.com</span
                   ></a
                 >
               </li>
-              <li class="pb-1 mb-2">
-                <span
-                  class="d-block font-weight-normal line-height-1 text-color-light"
-                  >WORKING DAYS/HOURS
-                </span>
-                Mon - Sun / 9:00AM - 8:00PM
-              </li>
+              
             </ul>
             <ul
               class="social-icons social-icons-clean-with-border social-icons-medium"
@@ -89,36 +83,37 @@
               <li class="mb-0"><a href="sitemap.html">Sitemap</a></li>
             </ul>
           </div>
-          <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-            <h5 class="text-4 text-color-light mb-3">RECENT NEWS</h5>
-            <article class="mb-3">
-              <a href="blog-post.html" class="text-color-light text-3-5"
-                >Why should I buy a Web Template?</a
-              >
-              <p class="line-height-2 mb-0">
-                <a href="#">Nov 25, 2020</a> in <a href="#">Design,</a>
-                <a href="#">Coding</a>
-              </p>
-            </article>
-            <article class="mb-3">
-              <a href="blog-post.html" class="text-color-light text-3-5"
-                >Creating Amazing Website with Porto</a
-              >
-              <p class="line-height-2 mb-0">
-                <a href="#">Nov 25, 2020</a> in <a href="#">Design,</a>
-                <a href="#">Coding</a>
-              </p>
-            </article>
-            <article>
-              <a href="blog-post.html" class="text-color-light text-3-5"
-                >Best Practices for Top UI Design</a
-              >
-              <p class="line-height-2 mb-0">
-                <a href="#">Nov 25, 2020</a> in <a href="#">Design,</a>
-                <a href="#">Coding</a>
-              </p>
-            </article>
-          </div>
+		  <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+		    <h5 class="text-4 text-color-light mb-3">RECENT UPDATES</h5>
+
+		    <article class="mb-3">
+		      <a href="#" class="text-color-light text-3-5">
+		        Community Safety Workshop Scheduled
+		      </a>
+		      <p class="line-height-2 mb-0">
+		        <a href="#">Oct 10, 2025</a> in <a href="#">Safety</a>, <a href="#">Events</a>
+		      </p>
+		    </article>
+
+		    <article class="mb-3">
+		      <a href="#" class="text-color-light text-3-5">
+		        Residents Help Drive Local Food Donation
+		      </a>
+		      <p class="line-height-2 mb-0">
+		        <a href="#">Oct 5, 2025</a> in <a href="#">Community</a>, <a href="#">Volunteer</a>
+		      </p>
+		    </article>
+
+		    <article>
+		      <a href="#" class="text-color-light text-3-5">
+		        New Nearby Shops Added in Directory
+		      </a>
+		      <p class="line-height-2 mb-0">
+		        <a href="#">Oct 1, 2025</a> in <a href="#">Resources</a>, <a href="#">Updates</a>
+		      </p>
+		    </article>
+		  </div>
+
           <div class="col-md-6 col-lg-3">
             <h5 class="text-4 text-color-light mb-3">SUBSCRIBE NEWSLETTER</h5>
             <p class="mb-2">

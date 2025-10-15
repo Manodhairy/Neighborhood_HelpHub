@@ -1,6 +1,9 @@
 package com.nh.Neighborhoods_Helphub_mvc.Controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -21,5 +24,26 @@ public class HomeController {
 	private String addNewMember() {
 		return "Admin/AddUser";
 
+	}
+	
+	@GetMapping("/HomeData")
+	public String homedata( HttpSession hs,Model m) {
+		String userName=(String) hs.getAttribute("userName");
+		m.addAttribute("UserName",userName);
+		return "UserWeb/HomePage";
+	}
+	
+	
+	@GetMapping("/EventInfo")
+	private String eventData(HttpSession hs,Model m){
+		String userName=(String) hs.getAttribute("userName");
+		 m.addAttribute("UserName", userName);
+		return "redirect:/AllEvent";
+	}
+	
+	
+	@GetMapping("/EventPage")
+	public String EventInfo() {
+		return "redirect:/AdminEventInfo";
 	}
 }

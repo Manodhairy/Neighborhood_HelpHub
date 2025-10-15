@@ -124,11 +124,11 @@
                       <a href="index.html">
                         <img
                           alt="Porto"
-                          width="100"
-                          height="48"
-                          data-sticky-width="82"
-                          data-sticky-height="40"
-                          src="resources/assets1/img/logo-default-slim.png"
+                          width="150"
+                          height="58"
+                          data-sticky-width="90"
+                          data-sticky-height="50"
+                          src="resources/assets/images/sunshine.png"
                         />
                       </a>
                     </div>
@@ -147,7 +147,7 @@
                             <li class="dropdown">
                               <a
                                 class="dropdown-item dropdown-toggle"
-                                href="index.html"
+                                href="HomeData"
                               >
                                 Home
                               </a>
@@ -165,9 +165,9 @@
                             <li class="dropdown">
                               <a
                                 class="dropdown-item dropdown-toggle active"
-                                href="#"
+                                href="EventInfo"
                               >
-                                Features
+                                Events
                               </a>
                               
                             </li>
@@ -218,7 +218,7 @@
                           class="header-nav-features-toggle"
                           aria-label=""
                         >
-                          <i class="far fa-user"></i> JOHN DOE
+                          <i class="far fa-user"></i> ${UserName}
                         </a>
                         <div
                           class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed header-nav-features-dropdown-force-right"
@@ -231,7 +231,7 @@
                               </p>
                               <p>
                                 <strong class="text-color-dark text-4"
-                                  >John Doe</strong
+                                  >${UserName}</strong
                                 >
                               </p>
                             </div>
@@ -255,7 +255,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                  <a class="nav-link border-bottom-0" href="#"
+                                  <a class="nav-link border-bottom-0" href="LogOutUser"
                                     >Log Out</a
                                   >
                                 </li>

@@ -100,9 +100,9 @@
                         alt=""
                       />
                     </span>
-                    DO YOU NEED A
+                    Welcome to
                     <span class="position-relative"
-                      >NEW
+                      >Neighborhoods HelpHub
                       <span
                         class="position-absolute left-50pct transform3dx-n50 top-0 mt-4"
                         ><img
@@ -132,14 +132,14 @@
                     data-appear-animation-delay="500"
                     data-plugin-options="{'minWindowWidth': 0}"
                   >
-                    WEB DESIGN?
+                    A community platform to connect, collaborate, and care for your neighbors.
                   </h1>
                   <p
                     class="text-4 text-color-light font-weight-light opacity-7 mb-0"
                     data-plugin-animated-letters
                     data-plugin-options="{'startDelay': 1000, 'minWindowWidth': 0}"
                   >
-                    Check out our options and features
+                    Join Your Neighborhood
                   </p>
                 </div>
               </div>
@@ -179,7 +179,7 @@
                             alt=""
                           />
                         </span>
-                        WE WORK HARD AND PORTO HAS
+                        Plan & Participate
                         <span
                           class="position-absolute left-100pct top-50pct transform3dy-n50 opacity-3"
                         >
@@ -199,17 +199,15 @@
                         data-appear-animation-delay="500"
                         data-plugin-options="{'minWindowWidth': 0}"
                       >
-                        THE BEST DESIGN
+                        Neighborhood Events
                       </h2>
                       <p
                         class="text-4 text-color-light font-weight-light opacity-7 text-center mb-0"
                         data-plugin-animated-letters
                         data-plugin-options="{'startDelay': 1000, 'minWindowWidth': 0, 'animationSpeed': 30}"
                       >
-                        Trusted by over
-                        <strong class="text-color-light">40,000</strong>
-                        satisfied users, Porto is a huge success in the one of
-                        largest world's MarketPlace
+                         Explore Events
+                          Organize charity drives, clean-up campaigns, and community meet-ups easily.
                       </p>
                     </div>
                   </div>
@@ -251,7 +249,7 @@
                             alt=""
                           />
                         </span>
-                        WE CREATE DESIGNS, WE ARE
+                        Stay Connected with Your Neighbors
                         <span
                           class="position-absolute left-100pct top-50pct transform3dy-n50 opacity-3"
                         >
@@ -265,19 +263,16 @@
                           />
                         </span>
                       </h3>
-                      <h2
-                        class="porto-big-title text-color-light font-weight-extra-bold mb-3"
-                        data-plugin-animated-letters
-                        data-plugin-options="{'startDelay': 1000, 'minWindowWidth': 0, 'animationSpeed': 300, 'animationName': 'fadeInRightShorterOpacity', 'letterClass': 'd-inline-block'}"
-                      >
-                        PORTO
-                      </h2>
+					  <h2 class="porto-big-title text-color-light font-weight-extra-bold mb-2" data-plugin-animated-letters data-plugin-options="{'startDelay':1000,'minWindowWidth':0,'animationSpeed':300,'animationName':'fadeInRightShorterOpacity','letterClass':'d-inline-block'}">
+						Sunshine Heights
+					</h2>
+
                       <p
                         class="text-4 text-color-light font-weight-light text-center mb-0"
                         data-plugin-animated-letters
                         data-plugin-options="{'startDelay': 2000, 'minWindowWidth': 0}"
                       >
-                        The best choice for your new website
+					  Discuss, share ideas, or report issues in the local community forum.
                       </p>
                     </div>
                   </div>
@@ -292,9 +287,9 @@
             <div class="row align-items-center">
               <div class="col-lg-8">
                 <p>
-                  The fastest way to grow your business with the leader in
+                   Bringing people together with the power of
                   <span class="highlighted-word">Technology</span>
-                  <span>Check out our options and features included.</span>
+                  <span>Find help, share resources, and make a difference in your neighborhood.</span>
                 </p>
               </div>
               <div class="col-lg-4">
@@ -319,22 +314,22 @@
                 class="word-rotator slide font-weight-bold text-8 mb-3 appear-animation"
                 data-appear-animation="fadeInUpShorter"
               >
-                <span>Porto is </span>
+                <span>Sunshine Heights</span>
                 <span class="word-rotator-words bg-dark">
-                  <b class="is-visible">incredibly</b>
-                  <b>especially</b>
-                  <b>extremely</b>
+                  <b class="is-visible">Smart Living</b>
+				  <b>Connected Community</b>
+				          
                 </span>
-                <span> beautiful and fully responsive.</span>
+                <span> where neighbors grow together.</span>
               </h1>
               <p
                 class="lead appear-animation"
                 data-appear-animation="fadeInUpShorter"
                 data-appear-animation-delay="300"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                elementum, nulla vel pellentesque consequat, ante nulla
-                hendrerit arcu, ac tincidunt mauris lacus sed leo.
+			  Sunshine Heights is a next-generation neighborhood platform designed 
+			         to connect residents, simplify communication, and build a smarter, 
+			         safer, and more caring community.
               </p>
             </div>
           </div>
@@ -428,145 +423,153 @@
             </div>
           </div>
 
-          <div class="row pb-3">
-            <div class="col-lg-12">
-              <h2 class="font-weight-normal text-7">
-                Our <strong class="font-weight-extra-bold">Features</strong>
-              </h2>
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="feature-box feature-box-style-2">
-                    <div class="feature-box-icon">
-                      <i class="icons icon-support text-color-primary"></i>
-                    </div>
-                    <div class="feature-box-info">
-                      <h4 class="font-weight-bold text-4-5 mb-1">
-                        Customer Support
-                      </h4>
-                      <p class="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus blandit massa
-                      </p>
-                    </div>
-                  </div>
-                  <div class="feature-box feature-box-style-2">
-                    <div class="feature-box-icon">
-                      <i class="icons icon-doc text-color-primary"></i>
-                    </div>
-                    <div class="feature-box-info">
-                      <h4 class="font-weight-bold text-4-5 mb-1">
-                        HTML5 / CSS3 / JS
-                      </h4>
-                      <p class="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus blandit massa
-                      </p>
-                    </div>
-                  </div>
-                  <div class="feature-box feature-box-style-2">
-                    <div class="feature-box-icon">
-                      <i
-                        class="icons icon-social-google text-color-primary"
-                      ></i>
-                    </div>
-                    <div class="feature-box-info">
-                      <h4 class="font-weight-bold text-4-5 mb-1">
-                        500+ Google Fonts
-                      </h4>
-                      <p class="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus blandit massa
-                      </p>
-                    </div>
-                  </div>
-                  <div class="feature-box feature-box-style-2">
-                    <div class="feature-box-icon">
-                      <i class="icons icon-pencil text-color-primary"></i>
-                    </div>
-                    <div class="feature-box-info">
-                      <h4 class="font-weight-bold text-4-5 mb-1">Colors</h4>
-                      <p class="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus blandit massa
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="feature-box feature-box-style-2">
-                    <div class="feature-box-icon">
-                      <i class="icons icon-layers text-color-primary"></i>
-                    </div>
-                    <div class="feature-box-info">
-                      <h4 class="font-weight-bold text-4-5 mb-1">Sliders</h4>
-                      <p class="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus blandit massa
-                      </p>
-                    </div>
-                  </div>
-                  <div class="feature-box feature-box-style-2">
-                    <div class="feature-box-icon">
-                      <i class="icons icon-user text-color-primary"></i>
-                    </div>
-                    <div class="feature-box-info">
-                      <h4 class="font-weight-bold text-4-5 mb-1">Icons</h4>
-                      <p class="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus blandit massa
-                      </p>
-                    </div>
-                  </div>
-                  <div class="feature-box feature-box-style-2">
-                    <div class="feature-box-icon">
-                      <i class="icons icon-menu text-color-primary"></i>
-                    </div>
-                    <div class="feature-box-info">
-                      <h4 class="font-weight-bold text-4-5 mb-1">Buttons</h4>
-                      <p class="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus blandit massa
-                      </p>
-                    </div>
-                  </div>
-                  <div class="feature-box feature-box-style-2">
-                    <div class="feature-box-icon">
-                      <i
-                        class="icons icon-screen-desktop text-color-primary"
-                      ></i>
-                    </div>
-                    <div class="feature-box-info">
-                      <h4 class="font-weight-bold text-4-5 mb-1">Lightbox</h4>
-                      <p class="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus blandit massa
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+		  <div class="row pb-3">
+		    <div class="col-lg-12">
+		      <h2 class="font-weight-normal text-7">
+		        Our <strong class="font-weight-extra-bold">Features</strong>
+		      </h2>
+		      <div class="row">
+		        <div class="col-sm-6">
+		          <!-- Admin Dashboard -->
+		          <div class="feature-box feature-box-style-2">
+		            <div class="feature-box-icon">
+		              <i class="icons icon-screen-desktop text-color-primary"></i>
+		            </div>
+		            <div class="feature-box-info">
+		              <h4 class="font-weight-bold text-4-5 mb-1">Admin Dashboard</h4>
+		              <p class="mb-4">
+		                Manage all families, members, and help requests with real-time
+		                control. Track flat occupancy and community announcements easily.
+		              </p>
+		            </div>
+		          </div>
+
+		          <!-- Member Dashboard -->
+		          <div class="feature-box feature-box-style-2">
+		            <div class="feature-box-icon">
+		              <i class="icons icon-user text-color-primary"></i>
+		            </div>
+		            <div class="feature-box-info">
+		              <h4 class="font-weight-bold text-4-5 mb-1">Member Dashboard</h4>
+		              <p class="mb-4">
+		                Residents can register, update family details, view events, and
+		                send help requests through a user-friendly interface.
+		              </p>
+		            </div>
+		          </div>
+
+		          <!-- Help Request System -->
+		          <div class="feature-box feature-box-style-2">
+		            <div class="feature-box-icon">
+		              <i class="icons icon-support text-color-primary"></i>
+		            </div>
+		            <div class="feature-box-info">
+		              <h4 class="font-weight-bold text-4-5 mb-1">Help Request System</h4>
+		              <p class="mb-4">
+		                Submit and manage emergency or assistance requests, helping
+		                neighbors and admins respond faster.
+		              </p>
+		            </div>
+		          </div>
+
+		          <!-- AI Chatbot -->
+		          <div class="feature-box feature-box-style-2">
+		            <div class="feature-box-icon">
+		              <i class="icons icon-bubble text-color-primary"></i>
+		            </div>
+		            <div class="feature-box-info">
+		              <h4 class="font-weight-bold text-4-5 mb-1">AI Chatbot</h4>
+		              <p class="mb-4">
+		                Integrated AI assistant to answer queries, suggest nearby events,
+		                and guide users through the system.
+		              </p>
+		            </div>
+		          </div>
+		        </div>
+
+		        <div class="col-sm-6">
+		          <!-- Smart Search -->
+		          <div class="feature-box feature-box-style-2">
+		            <div class="feature-box-icon">
+		              <i class="icons icon-magnifier text-color-primary"></i>
+		            </div>
+		            <div class="feature-box-info">
+		              <h4 class="font-weight-bold text-4-5 mb-1">Smart Search</h4>
+		              <p class="mb-4">
+		                Quickly find members, flats, or announcements using an intelligent
+		                search system with filters.
+		              </p>
+		            </div>
+		          </div>
+
+		          <!-- Secure Login -->
+		          <div class="feature-box feature-box-style-2">
+		            <div class="feature-box-icon">
+		              <i class="icons icon-lock text-color-primary"></i>
+		            </div>
+		            <div class="feature-box-info">
+		              <h4 class="font-weight-bold text-4-5 mb-1">Secure Login</h4>
+		              <p class="mb-4">
+		                Role-based authentication for Admin and Member accounts ensures
+		                data security and controlled access.
+		              </p>
+		            </div>
+		          </div>
+
+		          <!-- Event Management -->
+		          <div class="feature-box feature-box-style-2">
+		            <div class="feature-box-icon">
+		              <i class="icons icon-calendar text-color-primary"></i>
+		            </div>
+		            <div class="feature-box-info">
+		              <h4 class="font-weight-bold text-4-5 mb-1">Event Management</h4>
+		              <p class="mb-4">
+		                Organize and promote community events or meetings directly through
+		                the dashboard.
+		              </p>
+		            </div>
+		          </div>
+
+				  <!-- Nearby Shops -->
+				    <div class="feature-box feature-box-style-2">
+				      <div class="feature-box-icon">
+				        <i class="icons icon-location-pin text-color-primary"></i>
+				      </div>
+				      <div class="feature-box-info">
+				        <h4 class="font-weight-bold text-4-5 mb-1">Nearby Shops</h4>
+				        <p class="mb-4">
+				          Find nearby grocery stores, pharmacies, and essential shops with 
+				          real-time distance and directions for residents’ convenience.
+				        </p>
+				      </div>
+				    </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+
 
           <hr class="solid my-5" />
 
-          <div class="row text-center pt-4">
-            <div class="col">
-              <h2 class="word-rotator slide font-weight-bold text-8 mb-2">
-                <span>We're not the only ones </span>
-                <span class="word-rotator-words bg-primary">
-                  <b class="is-visible">excited</b>
-                  <b>happy</b>
-                </span>
-                <span> about Porto Template...</span>
-              </h2>
-              <h4 class="text-primary lead tall text-4">
-                50,000 CUSTOMERS IN 100 COUNTRIES USE PORTO TEMPLATE. MEET OUR
-                CUSTOMERS.
-              </h4>
-            </div>
-          </div>
-        </div>
+		  <div class="row text-center pt-4">
+		    <div class="col">
+		      <h2 class="word-rotator slide font-weight-bold text-8 mb-2">
+		        <span>Our users are always </span>
+		        <span class="word-rotator-words bg-primary">
+		          <b class="is-visible">excited</b>
+		          <b>happy</b>
+		          <b>amazed</b>
+		          <b>thrilled</b>
+		        </span>
+		        <span> with our platform!</span>
+		      </h2>
+		      <h4 class="text-primary lead tall text-4">
+		        Join over <strong>5000+ users </strong> who trust and enjoy our services every day.
+		      </h4>
+		    </div>
+		  </div>
+
 
         <section
           class="section section-custom-map appear-animation lazyload"

@@ -79,18 +79,18 @@
                         </a>
                     </li>
 
-                    <li class="side-nav-item">
-                        <a href="dashboard-wallet.html" class="side-nav-link">
-                            <span class="menu-icon"><i class="ti ti-wallet"></i></span>
-                            <span class="menu-text"> eWallet </span>
-                           
-                        </a>
-                    </li>
+					<li class="side-nav-item">
+					    <a href="EventPage" class="side-nav-link">
+					        <span class="menu-icon"><i class="ti ti-calendar"></i></span>
+					        <span class="menu-text"> Events Data</span>
+					    </a>
+					</li>
+
 					
 					
 					<li class="side-nav-item">
 					        <a href="logout" class="side-nav-link">
-					             <span class="menu-icon"><i class="ti ti-wallet"></i></span>
+					             <span class="menu-icon"><i class="ti ti-logout"></i></span>
 					             <span class="menu-text"> logout</span>
 					                           
 					         </a>

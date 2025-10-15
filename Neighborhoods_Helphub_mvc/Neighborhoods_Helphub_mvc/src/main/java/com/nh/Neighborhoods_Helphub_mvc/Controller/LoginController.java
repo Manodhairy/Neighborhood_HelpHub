@@ -51,15 +51,25 @@ public class LoginController {
 	
 	
 	@PostMapping("/UserLogin")
-	public String UserLogin(@ModelAttribute users u ,Model m) {
+	public String UserLogin(@ModelAttribute users u ,Model m,HttpSession hs) {
 		users user=ls.userlogin(u);
 		
+		hs.setAttribute("userName", user.getFullName());
 		if(user != null) {
+			String userName=(String) hs.getAttribute("userName");
+			m.addAttribute("UserName",userName);
 		   return "UserWeb/HomePage";
-		}else {
+		} else {
+			
 			 m.addAttribute("error", "Invalid username or password!");
 	         return "Login/LoginForm";
 
 		}
+	}
+	
+	@GetMapping("/LogOutUser")
+	public String logoutUser(HttpSession hs) {
+		hs.invalidate();
+		return "Login/LoginForm";
 	}
 }
