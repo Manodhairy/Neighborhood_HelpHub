@@ -46,4 +46,17 @@ public class HomeController {
 	public String EventInfo() {
 		return "redirect:/AdminEventInfo";
 	}
+	
+	
+	@GetMapping("/contact")
+	public String contact(HttpSession hs,Model m) {
+		String userName=(String) hs.getAttribute("userName");
+		 m.addAttribute("UserName", userName);
+		 
+		 
+		 int userId=   (int) hs.getAttribute("userId");
+		 m.addAttribute("userId",userId);
+
+		return "UserWeb/Contact";
+	}
 }
