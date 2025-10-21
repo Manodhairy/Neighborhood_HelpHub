@@ -59,4 +59,12 @@ public class HomeController {
 
 		return "UserWeb/Contact";
 	}
+	
+	
+	
+	
+	@GetMapping("/ComplaintPage")
+	public String ComplaintPage() {
+		return "redirect:/ViewComplaintPage";
+	}
 }

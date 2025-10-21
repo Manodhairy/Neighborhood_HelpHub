@@ -87,7 +87,7 @@
 
 
 
-					<div class="d-flex justify-content-center mt-3 mr-5">
+					<div class="d-flex justify-content-center ">
 						    <div class="col-lg-8 col-md-10">
 						        <c:if test="${not empty successMessage}">
 						            <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
@@ -106,7 +106,7 @@
 						</div>
 
 
-					<div class="container mt-5">
+					<div class="container ">
 					    <h1>Add User</h1>
 					    <div class="row justify-content-center">
 					        <div class="col-lg-10 col-xl-8">

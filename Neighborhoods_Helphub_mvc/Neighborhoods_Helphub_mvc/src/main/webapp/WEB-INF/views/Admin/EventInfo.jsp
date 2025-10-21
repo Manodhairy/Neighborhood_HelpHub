@@ -37,7 +37,7 @@
 					      <div class="row justify-content-center">
 					        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12">
 					          
-					         
+
 
 					          <div class="card shadow-lg border-0 rounded-3">
 					            <div class="card-header border-bottom d-flex justify-content-between align-items-center bg-light">

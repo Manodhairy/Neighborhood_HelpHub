@@ -157,7 +157,7 @@
                         <div class="card">
                             <div class="d-flex card-header justify-content-between align-items-center">
                                 <h4 class="header-title">All Member</h4>
-                                <a href="#" class="btn btn-sm btn-secondary">Add New <i class="ti ti-plus ms-1"></i></a>
+                                <a href="addNewMember" class="btn btn-sm btn-secondary">Add New <i class="ti ti-plus ms-1"></i></a>
                             </div>
                             <div class="card-body p-0">
                                 <div class="table-responsive">

@@ -2,13 +2,13 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<%@ include file="NavBar.jsp" %>
 
+<%@ include file="NavBar.jsp" %>
 <!-- Bootstrap 5 & Font Awesome -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-<section id="content">
+<section id="content" style="background-color:#c1bcca24">
 
     <!-- ✅ Success Message -->
     <c:if test="${not empty reqMsg}">
@@ -17,12 +17,13 @@
         </div>
     </c:if>
 
-    <!-- ✅ Button to open modal -->
-    <div class="text-center my-4">
-        <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#eventRegisterModal">
-            Register for Event
-        </button>
-    </div>
+	<div class="text-center p-5">
+	  <button class="btn btn-primary btn-lg px-4 py-2 shadow-lg rounded-pill"
+	          data-bs-toggle="modal" data-bs-target="#eventRegisterModal"
+	          style="font-weight: 600; letter-spacing: 0.5px;">
+	    <i class="fas fa-calendar-plus me-2"></i> Register your Event
+	  </button>
+	</div>
 
     <!-- ✅ Event Registration Modal -->
     <div class="modal fade" id="eventRegisterModal" tabindex="-1" aria-labelledby="eventRegisterModalLabel" aria-hidden="true">
@@ -136,6 +137,8 @@
 	            <div class="alert alert-info text-center rounded-pill shadow-sm">No events available right now.</div>
 	        </c:if>
 	    </div>
+		
+		<%@ include file="Footer.jsp" %>
 </section>
 
 <!-- ✅ Scripts -->
@@ -153,7 +156,7 @@
     }, 3000);
 </script>
 
-<%@ include file="Footer.jsp" %>
+
 
 
 <!-- Vendor Scripts -->

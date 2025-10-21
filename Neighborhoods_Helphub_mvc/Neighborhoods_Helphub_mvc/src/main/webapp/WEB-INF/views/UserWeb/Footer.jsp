@@ -1,6 +1,6 @@
 <footer id="footer" class="footer-texts-more-lighten">
       <div class="container">
-        <div class="row py-4 my-5">
+        <div class="row py-4 ">
           <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
             <h5 class="text-4 text-color-light mb-3">CONTACT INFO</h5>
             <ul class="list list-unstyled">

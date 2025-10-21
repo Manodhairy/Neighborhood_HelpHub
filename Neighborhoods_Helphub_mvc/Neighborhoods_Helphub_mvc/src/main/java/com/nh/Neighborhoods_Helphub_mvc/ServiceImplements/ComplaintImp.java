@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.nh.Neighborhoods_Helphub_mvc.DTO.ComplaintUserView;
 import com.nh.Neighborhoods_Helphub_mvc.Entity.Complaint;
 
 @Service
@@ -16,6 +17,11 @@ public class ComplaintImp {
 
 	public Complaint submitComplaint(Complaint c) {
 	   return	rt.postForObject(baseUrl + "AddComplaint", c, Complaint.class);
+		
+	}
+
+	public ComplaintUserView[] ViewComplaintPage() {
+		  return   rt.getForObject(baseUrl + "ViewComplaint", ComplaintUserView[].class);
 		
 	}
 

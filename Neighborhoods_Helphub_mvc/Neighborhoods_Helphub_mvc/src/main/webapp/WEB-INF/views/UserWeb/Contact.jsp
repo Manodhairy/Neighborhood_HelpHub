@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
-<%@ include file="NavBar.jsp" %>
+
 
 <head>
   <!-- SweetAlert CSS + JS -->
@@ -10,7 +10,8 @@
 </head>
 
 <body>
-  <div role="main" class="main py-5">
+	<%@ include file="NavBar.jsp" %>
+  <div role="main" class="main pt-3" style="background-color:#c1bcca24">
     <div class="container bg-white shadow-lg rounded p-5">
       <div class="row">
         <!-- Left Section -->
@@ -89,11 +90,14 @@
             </p>
           </div>
         </div>
+		
       </div>
+	  
     </div>
+	<%@ include file="Footer.jsp" %>
   </div>
 
-  <%@ include file="Footer.jsp" %>
+  
 
   <!-- SweetAlert Popups -->
   <c:if test="${not empty sussMsg}">

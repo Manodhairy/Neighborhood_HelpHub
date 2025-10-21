@@ -85,6 +85,14 @@
 					        <span class="menu-text"> Events Data</span>
 					    </a>
 					</li>
+					
+					
+					<li class="side-nav-item">
+										    <a href="ComplaintPage" class="side-nav-link">
+										        <span class="menu-icon"><i class="ti ti-calendar"></i></span>
+										        <span class="menu-text"> Complaint's</span>
+							   </a>
+					</li>
 
 					
 					
