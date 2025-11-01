@@ -55,9 +55,10 @@ public class HomeController {
 		 
 		 
 		 int userId=   (int) hs.getAttribute("userId");
+		 
 		 m.addAttribute("userId",userId);
 
-		return "UserWeb/Contact";
+		return "redirect:/ViewComplaintForUser";
 	}
 	
 	

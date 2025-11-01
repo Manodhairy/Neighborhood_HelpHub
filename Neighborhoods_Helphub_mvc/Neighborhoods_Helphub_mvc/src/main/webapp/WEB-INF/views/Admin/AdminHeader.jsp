@@ -89,7 +89,7 @@
 					
 					<li class="side-nav-item">
 										    <a href="ComplaintPage" class="side-nav-link">
-										        <span class="menu-icon"><i class="ti ti-calendar"></i></span>
+										        <span class="menu-icon"><i class="ti ti-list"></i></span>
 										        <span class="menu-text"> Complaint's</span>
 							   </a>
 					</li>

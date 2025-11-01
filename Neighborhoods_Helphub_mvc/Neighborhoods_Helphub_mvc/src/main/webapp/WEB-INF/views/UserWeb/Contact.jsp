@@ -12,8 +12,8 @@
 <body>
 	<%@ include file="NavBar.jsp" %>
   <div role="main" class="main pt-3" style="background-color:#c1bcca24">
-    <div class="container bg-white shadow-lg rounded p-5">
-      <div class="row">
+    <div class="container bg-white shadow-lg rounded p-5 ">
+      <div class="row" style="width:100%">
         <!-- Left Section -->
         <div class="col-lg-6 mb-4">
           <h2 class="fw-bold text-warning mb-3">
@@ -28,7 +28,7 @@
           <form class="contact-form" action="submitComplaint" method="POST">
             <div class="row g-3">
               <div class="col-lg-6">
-                <input type="hidden" name="userId" value="${userId}" />
+              
               </div>
             </div>
 
@@ -94,6 +94,57 @@
       </div>
 	  
     </div>
+	
+	
+	
+	<div class="container mt-4">
+	  <div class="row">
+	    <c:forEach var="complaint" items="${complaintsList}">
+	      <div class="col-md-6 col-lg-4 mb-4">
+	        <div class="card shadow-sm h-100 border-0">
+	          
+	          <!-- Card Header -->
+	          <div class="card-header bg-primary text-white">
+	            <h5 class="mb-0">${complaint.subject}</h5>
+	          </div>
+
+	          <!-- Card Body -->
+	          <div class="card-body">
+	            <label class="form-label fw-bold mt-3">Message:</label>
+				<textarea class="form-control" rows="3" style="">
+					${complaint.message}
+					              </textarea></p>
+
+	            <c:if test="${not empty complaint.resolveMessage}">
+	              <label class="form-label fw-bold mt-3">Resolved Message:</label>
+	              <textarea class="form-control" rows="3" readonly style="resize:none;">
+	                    ${complaint.resolveMessage}
+	              </textarea>
+	            </c:if>
+	          </div>
+
+	          <!-- Card Footer -->
+	          <div class="card-footer d-flex justify-content-between align-items-center">
+	            <span class="badge 
+	              <c:choose>
+	                <c:when test='${complaint.complaintStatus == "Resolved"}'>bg-success</c:when>
+	                <c:when test='${complaint.complaintStatus == "Pending"}'>bg-warning text-dark</c:when>
+	                <c:otherwise>bg-secondary</c:otherwise>
+	              </c:choose>">
+	              ${complaint.complaintStatus}
+	            </span>
+	            <small class="text-muted">${complaint.complaintDate}</small>
+	          </div>
+
+	        </div>
+			
+			
+	      </div>
+	    </c:forEach>
+	  </div>
+	</div>
+	
+	
 	<%@ include file="Footer.jsp" %>
   </div>
 

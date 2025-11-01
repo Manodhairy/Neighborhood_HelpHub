@@ -79,6 +79,24 @@
 					          <div>
 					            <a href="#!" class="badge bg-warning-subtle text-warning fw-medium">${complaint.complaintStatus}</a>
 					          </div>
+							  <!-- Resolution Section -->
+							  <form action="resolveComplaint" method="post">
+							    <input type="hidden" name="complaintId" value="${complaint.complaintId}" />
+
+							    <div class="mb-3">
+							      <label  class="form-label fw-medium">Resolution Message</label>
+								 
+							      <textarea class="form-control" name="resolveMessage" 
+							                placeholder="Write how this complaint was resolved or any update..." rows="3"></textarea>
+							    </div>
+
+							    <div class="d-flex justify-content-between">
+							      <button type="submit" name="status" value="Resolved" class="btn btn-success btn-sm">
+							        Send Message
+							      </button>
+							     
+							    </div>
+							  </form>
 					        </div>
 					        <hr />
 					      </div>

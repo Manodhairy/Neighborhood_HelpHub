@@ -15,13 +15,27 @@ public class ComplaintImp {
 	
 	String baseUrl="http://localhost:8082/";
 
-	public Complaint submitComplaint(Complaint c) {
-	   return	rt.postForObject(baseUrl + "AddComplaint", c, Complaint.class);
+	public Complaint submitComplaint(Complaint c, int userId) {
+		
+        		 
+		
+		
+	   return	rt.postForObject(baseUrl + "AddComplaint/" + userId, c, Complaint.class);
 		
 	}
 
 	public ComplaintUserView[] ViewComplaintPage() {
 		  return   rt.getForObject(baseUrl + "ViewComplaint", ComplaintUserView[].class);
+		
+	}
+
+	public void resolveMessage(Complaint c, int complaintId) {
+		      rt.put(baseUrl + "resolveMessage/" + complaintId , c);
+		
+	}
+
+	public Complaint[] ViewComplaintForUser(int userId) {
+		 return rt.getForObject(baseUrl + "ViewComplaintForUser/" + userId, Complaint[].class);
 		
 	}
 

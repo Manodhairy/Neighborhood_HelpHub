@@ -13,13 +13,23 @@ public class ComplaintService {
 	@Autowired
 	ComplaintImp ci;
 
-	public Complaint submitComplaint(Complaint c) {
+	public Complaint submitComplaint(Complaint c, int userId) {
 		
-	return	ci.submitComplaint(c);
+	return	ci.submitComplaint(c,userId);
 	}
 
 	public ComplaintUserView[] ViewComplaintPage() {
 		  return  ci.ViewComplaintPage();
+		
+	}
+
+	public void resolveMessage(Complaint c, int complaintId) {
+		    ci.resolveMessage(c,complaintId);
+		
+	}
+
+	public Complaint[] ViewComplaintForUser(int userId) {
+		return ci.ViewComplaintForUser(userId);
 		
 	}
 
