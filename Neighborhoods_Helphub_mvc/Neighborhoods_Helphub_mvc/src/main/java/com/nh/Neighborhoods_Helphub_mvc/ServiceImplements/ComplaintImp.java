@@ -39,6 +39,16 @@ public class ComplaintImp {
 		
 	}
 
+	public void updateMessage(int id, Complaint c) {
+		   rt.put(baseUrl + "updateMessage/" +id, c);
+		
+	}
+
+	public void userResolveComplaint(int id) {
+		  rt.put(baseUrl + "userResolveComplaint/" +id, Complaint.class);
+		
+	}
+
 	
 
 }

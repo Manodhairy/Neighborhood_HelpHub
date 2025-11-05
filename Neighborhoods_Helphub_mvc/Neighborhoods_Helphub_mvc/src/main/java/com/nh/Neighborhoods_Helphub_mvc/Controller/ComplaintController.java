@@ -65,11 +65,28 @@ public class ComplaintController {
 		 Complaint[]  list= cs.ViewComplaintForUser(userId);
 		 m.addAttribute("complaintsList",list);
 		 m.addAttribute("userId",userId);
+	     String userName=(String) hs.getAttribute("userName");
+	     m.addAttribute("UserName", userName);
 		 return "UserWeb/Contact";
 		
 	}
 	
+     @PostMapping("/updateMessage")
+     public String updateMessage(@RequestParam ("complaintId") int id,@RequestParam ("message") String message,HttpSession hs,RedirectAttributes r) {
+    	 cs.updateMessage(id,message);
+    	 String userName=(String) hs.getAttribute("userName");
+	    	r.addFlashAttribute("UserName", userName);
+		   return "redirect:/ViewComplaintForUser";
+
+     }
 	
+      @GetMapping("/userResolveComplaint")
+      public String userResolveComplaint(@RequestParam ("complaintId") int id) {
+    	  cs.userResolveComplaint(id);
+    	  
+    	  return "redirect:/ViewComplaintForUser";
+    	
+      }
 	
 	
 	

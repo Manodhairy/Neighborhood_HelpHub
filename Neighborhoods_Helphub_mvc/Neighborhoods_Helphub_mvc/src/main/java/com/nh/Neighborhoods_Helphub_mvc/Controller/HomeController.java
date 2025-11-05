@@ -68,4 +68,10 @@ public class HomeController {
 	public String ComplaintPage() {
 		return "redirect:/ViewComplaintPage";
 	}
+	
+	
+	@GetMapping("/Neighbour")
+	public String Neighbor() {
+		return "UserWeb/Neighbourhood";
+	}
 }

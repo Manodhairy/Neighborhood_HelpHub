@@ -100,18 +100,25 @@
 	<div class="container mt-4">
 	  <div class="row">
 	    <c:forEach var="complaint" items="${complaintsList}">
+			
 	      <div class="col-md-6 col-lg-4 mb-4">
+			<form class="contact-form" action="updateMessage" method="POST">
 	        <div class="card shadow-sm h-100 border-0">
 	          
+				<input type="hidden" name="complaintId" value="${complaint.complaintId}"/>
+				
 	          <!-- Card Header -->
-	          <div class="card-header bg-primary text-white">
-	            <h5 class="mb-0">${complaint.subject}</h5>
-	          </div>
+			  <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+			    <h5 class="mb-0">${complaint.subject}</h5>
+				<a href="userResolveComplaint?complaintId=${complaint.complaintId}">
+				  <i class="fas fa-times-circle text-danger fs-5" title="Mark as Resolved"></i>
+				</a>
+			  </div>
 
 	          <!-- Card Body -->
 	          <div class="card-body">
 	            <label class="form-label fw-bold mt-3">Message:</label>
-				<textarea class="form-control" rows="3" style="">
+				<textarea class="form-control" rows="3" style="" name="message">
 					${complaint.message}
 					              </textarea></p>
 
@@ -125,17 +132,14 @@
 
 	          <!-- Card Footer -->
 	          <div class="card-footer d-flex justify-content-between align-items-center">
-	            <span class="badge 
-	              <c:choose>
-	                <c:when test='${complaint.complaintStatus == "Resolved"}'>bg-success</c:when>
-	                <c:when test='${complaint.complaintStatus == "Pending"}'>bg-warning text-dark</c:when>
-	                <c:otherwise>bg-secondary</c:otherwise>
-	              </c:choose>">
+	            <span class="badge  bg-secondary">
 	              ${complaint.complaintStatus}
 	            </span>
 	            <small class="text-muted">${complaint.complaintDate}</small>
+				
+				<input type="submit">
 	          </div>
-
+			  </form>
 	        </div>
 			
 			

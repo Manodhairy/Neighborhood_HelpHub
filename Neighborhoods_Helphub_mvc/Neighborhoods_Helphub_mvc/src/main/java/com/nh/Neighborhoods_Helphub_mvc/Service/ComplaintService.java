@@ -33,4 +33,16 @@ public class ComplaintService {
 		
 	}
 
+	public void updateMessage(int id, String message) {
+		   Complaint c=new Complaint();
+		   c.setMessage(message);
+		   ci.updateMessage(id,c);
+		
+	}
+
+	public void userResolveComplaint(int id) {
+		  ci.userResolveComplaint(id);
+		
+	}
+
 }
