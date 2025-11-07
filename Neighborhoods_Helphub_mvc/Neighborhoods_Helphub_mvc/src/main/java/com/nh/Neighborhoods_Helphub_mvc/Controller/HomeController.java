@@ -72,6 +72,6 @@ public class HomeController {
 	
 	@GetMapping("/Neighbour")
 	public String Neighbor() {
-		return "UserWeb/Neighbourhood";
+		return "redirect:/ViewAllNeighbour";
 	}
 }
