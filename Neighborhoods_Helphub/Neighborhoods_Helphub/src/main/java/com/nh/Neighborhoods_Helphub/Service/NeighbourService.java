@@ -14,16 +14,16 @@ import com.nh.Neighborhoods_Helphub.Repository.NeighbourRepo;
 public class NeighbourService {
 	
 	@Autowired
-	NeighbourRepo nr;
+	NeighbourRepo neighbourRepo;
 
 	public NeighbourData AddNeighbourData(NeighbourData n, users id) {
 		 n.setUser(id);
-		return nr.save(n);
+		return neighbourRepo.save(n);
 		
 	}
 
 	public List<NeighbourUserView> ViewNeighbourData() {
-		return   nr.findNeighbourUserView();
+		return   neighbourRepo.findNeighbourUserView();
 		
 	}
 

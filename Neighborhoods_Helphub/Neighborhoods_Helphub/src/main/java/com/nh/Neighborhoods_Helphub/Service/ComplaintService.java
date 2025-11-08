@@ -15,30 +15,30 @@ import com.nh.Neighborhoods_Helphub.Repository.ComplaintRepo;
 public class ComplaintService {
 	
 	@Autowired
-	ComplaintRepo cr;
+	ComplaintRepo complaintRepo;
 
 	public Complaint AddComplaint(Complaint c, users id) {
 		
 		 c.setUser(id);
 		
-		return cr.save(c);
+		return complaintRepo.save(c);
 		
 	}
 
 	public List<ComplaintUserView> viewComplaint() {
 		String complaintStatus="Pending";
-		 return   cr.findUserAndComplaintDataAndComplaintStatus(complaintStatus);
+		 return   complaintRepo.findUserAndComplaintDataAndComplaintStatus(complaintStatus);
 		
 	}
 
 	public Complaint resolveMessageUpdate(String resolveMessage, int d) {
-		     Optional<Complaint>  list=cr.findByComplaintId(d);
+		     Optional<Complaint>  list=complaintRepo.findByComplaintId(d);
 		     
 		     if(list.isPresent()) {
 		    	 Complaint c=list.get();
 		    	 c.setResolveMessage(resolveMessage);
 		    	 
-		    	return cr.save(c);
+		    	return complaintRepo.save(c);
 		     }else {
 		    	 
 		    	 throw new RuntimeException("User not found with ID: " + d);
@@ -51,7 +51,7 @@ public class ComplaintService {
 	 public List<Complaint> ViewComplaintForUser(users user) {
 		 
 		 String complaintStatus="Pending";
-        return cr.findByUserAndComplaintStatus(user,complaintStatus);
+        return complaintRepo.findByUserAndComplaintStatus(user,complaintStatus);
 		
 	 }
 
@@ -59,25 +59,25 @@ public class ComplaintService {
 	 
 	 
 	 public Complaint updateMessage(String message, int complaintId) {
-		  Optional<Complaint>  list=cr.findByComplaintId(complaintId);	
+		  Optional<Complaint>  list=complaintRepo.findByComplaintId(complaintId);	
 		  
 		  if(list.isPresent()) {
 			  Complaint c=list.get();
 			  c.setMessage(message);
 			  
-			  return cr.save(c);
+			  return complaintRepo.save(c);
 		  }else {
 			  throw new RuntimeException("User not found with ID: " +complaintId );
 		  }
 	 }
 
 	 public Complaint userResolveComplaint(int complaintId) {
-		  Optional<Complaint>  list=cr.findByComplaintId(complaintId);	
+		  Optional<Complaint>  list=complaintRepo.findByComplaintId(complaintId);	
 		   if(list.isPresent()) {
 			   Complaint c=list.get();
 			   c.setComplaintStatus("Resolved");
 			   
-			  return cr.save(c);
+			  return complaintRepo.save(c);
 		   }else {
 			   throw new RuntimeException("User not found with ID: " +complaintId);
 		   }

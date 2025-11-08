@@ -12,19 +12,20 @@ import com.nh.Neighborhoods_Helphub.Repository.UsersRepo;
 public class LoginService {
 
 	@Autowired
-	LoginRepo lr;
+	LoginRepo loginRepo;
+	
 	@Autowired
-	UsersRepo ur;
+	UsersRepo usersRepo;
 
 	
 	
 	public Admin AdminLogin(Admin a) {
-		return lr.findByAdminNameAndAdminEmailAndPassword(a.getAdminName(),a.getAdminEmail(),a.getPassword());
+		return loginRepo.findByAdminNameAndAdminEmailAndPassword(a.getAdminName(),a.getAdminEmail(),a.getPassword());
 		
 	}
 
 	public users Userlogin(users u) {
-		return  ur.findByFullNameAndEmailAndPassword(u.getFullName(),u.getEmail(),u.getPassword());
+		return  usersRepo.findByFullNameAndEmailAndPassword(u.getFullName(),u.getEmail(),u.getPassword());
 		
 	}
 }

@@ -16,12 +16,12 @@ import com.nh.Neighborhoods_Helphub.Service.EventServices;
 public class EventController {
 
 	@Autowired
-	EventServices es;
+	EventServices eventServices;
 	
 	@PostMapping("/registerEvent")
 	public Eventregistration eventdata(@RequestBody Eventregistration e) {
 		
-		return es.save(e);
+		return eventServices.save(e);
 		
 		
 	}
@@ -29,17 +29,17 @@ public class EventController {
 	
 	@GetMapping("/SearchData/{status}")
 	public Eventregistration[] SearchData(@PathVariable String status) {
-		return es.FindByStatus(status);
+		return eventServices.FindByStatus(status);
 	}
 	
 	
 	@DeleteMapping("/rejectEvent/{eId}")
 	public void rejectEvent(@PathVariable int eId) {
-		es.rejectEvent(eId);
+		eventServices.rejectEvent(eId);
 	}
 	
 	@PutMapping("/approveData/{eId}")
 	public Eventregistration approve(@PathVariable int eId) {
-		return es.approve(eId);
+		return eventServices.approve(eId);
 	}
 }

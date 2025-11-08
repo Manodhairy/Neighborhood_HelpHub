@@ -13,33 +13,33 @@ import com.nh.Neighborhoods_Helphub.Repository.UsersRepo;
 public class UsersService {
 
 	@Autowired
-	UsersRepo ur;
+	UsersRepo usersRepo;
 
 	public List<users> viewAll() {
-	 List<users> list=ur.findAll();	
+	 List<users> list=usersRepo.findAll();	
 	 return list;
 	}
 
 	public void addData(users s) {
-		ur.save(s);
+		usersRepo.save(s);
 		
 	}
 
 	public void DeleteData(int id) {
-		ur.deleteById(id);
+		usersRepo.deleteById(id);
 		
 	}
 
 	public Optional<users> selectData(int id) {
-	  return	ur.findById(id);
+	  return	usersRepo.findById(id);
 		
 	}
 
 	public Object update(users s) {
-		Optional<users> existingUser = ur.findById(s.getId());
+		Optional<users> existingUser = usersRepo.findById(s.getId());
 	    
 	    if (existingUser.isPresent()) {
-	        return ur.save(s); 
+	        return usersRepo.save(s); 
 	        } else {
 	        throw new RuntimeException("User not found with ID: " + s.getId());
 	    }
@@ -47,19 +47,19 @@ public class UsersService {
 	}
 
 	public long totalMember() {
-		long count=ur.count();
+		long count=usersRepo.count();
 		return count;
 		
 	}
 
 	public long ActiveMember() {
-		long count=ur.countByMemberStatus("active");
+		long count=usersRepo.countByMemberStatus("active");
 		  return count;
 		
 	}
 
 	public long inactivemember() {
-		  long count=  ur.countByMemberStatus("inactive");
+		  long count=  usersRepo.countByMemberStatus("inactive");
 		return count;
 	}
 }
