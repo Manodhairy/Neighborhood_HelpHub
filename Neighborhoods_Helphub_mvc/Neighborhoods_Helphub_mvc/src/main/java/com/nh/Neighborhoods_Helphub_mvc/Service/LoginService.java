@@ -12,18 +12,18 @@ public class LoginService {
 
 	
 	@Autowired
-	LoginImp li;
+	LoginImp loginImp;
 
 	public Admin AdminLogin(Admin a) {
 
 		
 		
 		
-	return	li.AdminLogin(a);
+	return	loginImp.AdminLogin(a);
 	}
 
 	public users userlogin(users u) {
-		return  li.userlogin(u);
+		return  loginImp.userlogin(u);
 		
 	}
 }

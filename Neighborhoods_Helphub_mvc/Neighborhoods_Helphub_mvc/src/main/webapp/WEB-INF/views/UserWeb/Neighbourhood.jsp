@@ -99,109 +99,116 @@
 					<li class="nav-item active" data-option-value="*">
 						<a class="nav-link text-2-5 text-uppercase active" href="#">Show All</a>
 					</li>
-					<li class="nav-item" data-option-value=".leadership">
-						<a class="nav-link text-2-5 text-uppercase" href="#">Leadership</a>
+					<li class="nav-item" data-option-value=".Doctor">
+						<a class="nav-link text-2-5 text-uppercase" href="#">Doctor</a>
 					</li>
-					<li class="nav-item" data-option-value=".marketing">
-						<a class="nav-link text-2-5 text-uppercase" href="#">Marketing</a>
+					<li class="nav-item" data-option-value=".Plumber">
+						<a class="nav-link text-2-5 text-uppercase" href="#">Plumber</a>
 					</li>
-					<li class="nav-item" data-option-value=".development">
-						<a class="nav-link text-2-5 text-uppercase" href="#">Development</a>
+					<li class="nav-item" data-option-value=".Electrician">
+						<a class="nav-link text-2-5 text-uppercase" href="#">Electrician</a>
 					</li>
-					<li class="nav-item" data-option-value=".design">
-						<a class="nav-link text-2-5 text-uppercase" href="#">Design</a>
+					<li class="nav-item" data-option-value=".Software devloper">
+						<a class="nav-link text-2-5 text-uppercase" href="#">SoftWare Devloper</a>
 					</li>
 				</ul>
 
 				<div class="sort-destination-loader sort-destination-loader-showing mt-4 pt-2">
 				    <div class="row team-list sort-destination" data-sort-id="team">
-					        <c:forEach var="member" items="${NeighbourList}">
-					            <div class="col-12 col-sm-6 col-lg-3 isotope-item leadership">
-									
-									    <div class="card shadow-sm border-0 member-card text-center p-3">
+						<c:forEach var="member" items="${NeighbourList}">
+						    <div class="col-12 col-sm-6 col-lg-3 isotope-item ${member.occupation} mb-4">
+						        <div class="card member-card border-0 shadow-lg text-center p-3 h-100 position-relative rounded-4 transition-all hover-shadow">
 
-									        <!-- 👤 Profile Icon -->
-									        <div class="member-icon-wrapper mx-auto mt-3 mb-3">
-									            <div class="rounded-circle bg-light d-flex align-items-center justify-content-center border border-3 border-primary shadow-sm"
-									                 style="width: 90px; height: 90px;">
-									                <i class="fas fa-user text-primary fa-2x"></i>
-									            </div>
-									        </div>
+						            <!-- 👤 Profile Icon -->
+						            <div class="member-icon-wrapper mx-auto mt-3 mb-3">
+						                <div class="rounded-circle bg-light d-flex align-items-center justify-content-center border border-3 border-primary shadow-sm"
+						                     style="width: 90px; height: 90px; transition: transform 0.3s ease;">
+						                    <i class="fas fa-user text-primary fa-2x"></i>
+						                </div>
+						            </div>
 
-									        <!-- Basic Info -->
-									        <div class="card-body p-3">
-									            <h5 class="fw-bold mb-1">${member.fullName}</h5>
-									            <p class="text-muted small mb-2">${member.occupation}</p>
+						            <!-- Basic Info -->
+						            <div class="card-body p-3">
+						                <h5 class="fw-bold mb-1 text-dark">${member.fullName}</h5>
+						                <p class="text-muted small mb-2">${member.occupation}</p>
 
-									            <!-- 👇 Popup Button -->
-									            <button type="button" class="btn btn-outline-primary btn-sm rounded-pill mt-2"
-									                    data-bs-toggle="modal" data-bs-target="#memberModal-${member.flat_no}">
-									                View Details
-									            </button>
-									        </div>
-									    </div>
-									</div>
+						                <!-- 👇 Popup Button -->
+						                <button type="button"
+						                        class="btn btn-outline-primary btn-sm rounded-pill mt-2 fw-semibold shadow-sm px-3"
+						                        data-bs-toggle="modal"
+						                        data-bs-target="#memberModal-${member.flat_no}">
+						                    <i class="fas fa-eye me-1"></i> View Details
+						                </button>
+						            </div>
+						        </div>
+						    </div>
 
-									<!-- 💬 Modal Popup -->
-									<div class="modal fade" id="memberModal-${member.flat_no}" tabindex="-1" aria-labelledby="memberModalLabel-${member.flat_no}" aria-hidden="true">
-									    <div class="modal-dialog modal-dialog-centered modal-lg">
-									        <div class="modal-content border-0 shadow-lg rounded-4">
+						    <!-- 💬 Modal Popup -->
+						    <div class="modal fade" id="memberModal-${member.flat_no}" tabindex="-1"
+						         aria-labelledby="memberModalLabel-${member.flat_no}" aria-hidden="true">
+						        <div class="modal-dialog modal-dialog-centered modal-lg">
+						            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
 
-									            <div class="modal-header bg-primary text-white">
-									                <h5 class="modal-title fw-semibold" id="memberModalLabel-${member.flat_no}">
-									                    ${member.fullName} — Details
-									                </h5>
-									                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-									            </div>
+						                <div class="modal-header bg-primary text-white py-3">
+						                    <h5 class="modal-title fw-semibold" id="memberModalLabel-${member.flat_no}">
+						                        <i class="fas fa-id-badge me-2"></i> ${member.fullName} - Details
+						                    </h5>
+						                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+						                </div>
 
-									            <div class="modal-body p-4">
-									                <div class="row">
-									                    <!-- Left Icon -->
-									                    <div class="col-md-4 text-center mb-3 mb-md-0">
-									                        <div class="rounded-circle bg-light d-flex align-items-center justify-content-center border border-3 border-primary mx-auto shadow-sm"
-									                             style="width: 120px; height: 120px;">
-									                            <i class="fas fa-user text-primary fa-3x"></i>
-									                        </div>
-									                        <h5 class="mt-3 mb-1">${member.fullName}</h5>
-									                        <p class="text-muted small">${member.occupation}</p>
+						                <div class="modal-body p-4 bg-light-subtle">
+						                    <div class="row">
+						                        <!-- Left Icon -->
+						                        <div class="col-md-4 text-center mb-3 mb-md-0">
+						                            <div class="rounded-circle bg-white d-flex align-items-center justify-content-center border border-3 border-primary mx-auto shadow-sm"
+						                                 style="width: 120px; height: 120px;">
+						                                <i class="fas fa-user text-primary fa-3x"></i>
+						                            </div>
+						                            <h5 class="mt-3 mb-1 fw-bold">${member.fullName}</h5>
+						                            <p class="text-muted small mb-2">${member.occupation}</p>
 
-									                        <!-- Social Links -->
-									                        <div class="d-flex justify-content-center gap-3 mt-3">
-									                            <c:if test="${not empty member.linkedin}">
-									                                <a href="https://www.linkedin.com/in/${member.linkedin}" target="_blank"
-									                                   class="text-muted fs-4 hover-linkedin"><i class="fab fa-linkedin"></i></a>
-									                            </c:if>
-									                            <c:if test="${not empty member.instagram}">
-									                                <a href="https://www.instagram.com/${member.instagram}" target="_blank"
-									                                   class="text-muted fs-4 hover-instagram"><i class="fab fa-instagram"></i></a>
-									                            </c:if>
-									                        </div>
-									                    </div>
+						                            <!-- 🌐 Social Links -->
+						                            <div class="d-flex justify-content-center gap-3 mt-3">
+						                                <c:if test="${not empty member.linkedin}">
+						                                    <a href="https://www.linkedin.com/in/${member.linkedin}" target="_blank"
+						                                       class="text-primary fs-5" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+						                                </c:if>
+						                                <c:if test="${not empty member.instagram}">
+						                                    <a href="https://www.instagram.com/${member.instagram}" target="_blank"
+						                                       class="text-danger fs-5" title="Instagram"><i class="fab fa-instagram"></i></a>
+						                                </c:if>
+						                            </div>
+						                        </div>
 
-									                    <!-- Right Info Section -->
-									                    <div class="col-md-8 text-start small">
-									                        <p><i class="fas fa-building text-primary me-2"></i><strong>Workplace:</strong> ${member.workplace}</p>
-									                        <p><i class="fas fa-briefcase text-success me-2"></i><strong>Experience:</strong> ${member.experience}</p>
-									                        <p><i class="fas fa-comment-dots text-info me-2"></i><strong>About:</strong> ${member.message}</p>
-									                        <hr>
-									                        <p><i class="fas fa-home text-secondary me-2"></i><strong>Flat:</strong> ${member.flat_no}</p>
-									                        <p><i class="fas fa-phone-alt text-success me-2"></i><strong>Mobile:</strong> ${member.mobile_no}</p>
-									                        <p><i class="fas fa-envelope text-danger me-2"></i><strong>Email:</strong> ${member.email}</p>
-									                        <p><i class="fas fa-user text-warning me-2"></i><strong>Age:</strong> ${member.age} |
-									                            <strong>Gender:</strong> ${member.gender}</p>
-									                    </div>
-									                </div>
-									            </div>
+						                        <!-- Right Info Section -->
+						                        <div class="col-md-8 text-start small">
+						                            <div class="p-2 bg-white rounded-3 shadow-sm">
+						                                <p><i class="fas fa-building text-primary me-2"></i><strong>Workplace:</strong> ${member.workplace}</p>
+						                                <p><i class="fas fa-briefcase text-success me-2"></i><strong>Experience:</strong> ${member.experience}</p>
+						                                <p><i class="fas fa-comment-dots text-info me-2"></i><strong>About:</strong> ${member.message}</p>
+						                                <hr>
+						                                <p><i class="fas fa-home text-secondary me-2"></i><strong>Flat:</strong> ${member.flat_no}</p>
+						                                <p><i class="fas fa-phone-alt text-success me-2"></i><strong>Mobile:</strong> ${member.mobile_no}</p>
+						                                <p><i class="fas fa-envelope text-danger me-2"></i><strong>Email:</strong> ${member.email}</p>
+						                                <p><i class="fas fa-user text-warning me-2"></i><strong>Age:</strong> ${member.age} |
+						                                    <strong>Gender:</strong> ${member.gender}</p>
+						                            </div>
+						                        </div>
+						                    </div>
+						                </div>
 
-									            <div class="modal-footer bg-light">
-									                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
-									            </div>
+						                <div class="modal-footer bg-light py-3">
+						                    <button type="button" class="btn btn-secondary rounded-pill px-4 shadow-sm"
+						                            data-bs-dismiss="modal">
+						                        <i class="fas fa-times me-1"></i> Close
+						                    </button>
+						                </div>
 
-									        </div>
-									    </div>
-									</div>
+						            </div>
+						        </div>
+						    </div>
+						</c:forEach>
 
-					        </c:forEach>
 					    </div>
 					</div>
 

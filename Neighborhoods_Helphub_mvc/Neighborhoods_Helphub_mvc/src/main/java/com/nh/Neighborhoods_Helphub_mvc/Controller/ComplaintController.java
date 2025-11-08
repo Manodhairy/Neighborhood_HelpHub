@@ -19,12 +19,12 @@ import com.nh.Neighborhoods_Helphub_mvc.Service.ComplaintService;
 public class ComplaintController {
 	
 	@Autowired
-	ComplaintService cs;   
+	ComplaintService complaintService;   
 	
 	@PostMapping("/submitComplaint")
 	public String submitComplaint(@ModelAttribute Complaint c, Model m,HttpSession hs,RedirectAttributes r) {
            int userId=   (int) hs.getAttribute("userId");
-	    Complaint complaint = cs.submitComplaint(c,userId);
+	    Complaint complaint = complaintService.submitComplaint(c,userId);
 	    if (complaint != null) {
 	    	String userName=(String) hs.getAttribute("userName");
 	    	r.addFlashAttribute("UserName", userName);
@@ -40,7 +40,7 @@ public class ComplaintController {
 
 	@GetMapping("/ViewComplaintPage")
 	public String ViewComplaintPage(Model m) {
-		ComplaintUserView[] list=	cs.ViewComplaintPage();
+		ComplaintUserView[] list=	complaintService.ViewComplaintPage();
 		 m.addAttribute("complaintsList",list);
 		 
 		 return "Admin/Complaint";
@@ -52,7 +52,7 @@ public class ComplaintController {
 	public String resolveComplaint(@RequestParam ("resolveMessage") String resolveMessage,@RequestParam ("complaintId") int complaintId) {
 		Complaint c=new Complaint();
 		   c.setResolveMessage(resolveMessage);
-		   cs.resolveMessage(c,complaintId);   
+		   complaintService.resolveMessage(c,complaintId);   
 		   
 		   return "redirect:/ViewComplaintPage";
 	}
@@ -62,7 +62,7 @@ public class ComplaintController {
 	public String ViewComplaintForUser(HttpSession hs,Model m) {
 		 int userId=   (int) hs.getAttribute("userId");
 		 
-		 Complaint[]  list= cs.ViewComplaintForUser(userId);
+		 Complaint[]  list= complaintService.ViewComplaintForUser(userId);
 		 m.addAttribute("complaintsList",list);
 		 m.addAttribute("userId",userId);
 	     String userName=(String) hs.getAttribute("userName");
@@ -73,7 +73,7 @@ public class ComplaintController {
 	
      @PostMapping("/updateMessage")
      public String updateMessage(@RequestParam ("complaintId") int id,@RequestParam ("message") String message,HttpSession hs,RedirectAttributes r) {
-    	 cs.updateMessage(id,message);
+    	 complaintService.updateMessage(id,message);
     	 String userName=(String) hs.getAttribute("userName");
 	    	r.addFlashAttribute("UserName", userName);
 		   return "redirect:/ViewComplaintForUser";
@@ -82,7 +82,7 @@ public class ComplaintController {
 	
       @GetMapping("/userResolveComplaint")
       public String userResolveComplaint(@RequestParam ("complaintId") int id) {
-    	  cs.userResolveComplaint(id);
+    	  complaintService.userResolveComplaint(id);
     	  
     	  return "redirect:/ViewComplaintForUser";
     	

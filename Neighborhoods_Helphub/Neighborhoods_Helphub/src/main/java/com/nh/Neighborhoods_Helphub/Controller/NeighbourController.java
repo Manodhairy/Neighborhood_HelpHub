@@ -18,17 +18,17 @@ import com.nh.Neighborhoods_Helphub.Service.NeighbourService;
 public class NeighbourController {
 
 	@Autowired
-	NeighbourService ns;
+	NeighbourService neighbourService;
 	
     
 	@PostMapping("/AddNeighbourData/{id}")
 	public NeighbourData AddNeighbourData(@RequestBody NeighbourData n,@PathVariable users id) {
-		return ns.AddNeighbourData(n,id);
+		return neighbourService.AddNeighbourData(n,id);
 	}
 	
 	
 	@GetMapping("/ViewNeighbourData")
 	public List<NeighbourUserView> ViewNeighbourData() {
-		return ns.ViewNeighbourData();
+		return neighbourService.ViewNeighbourData();
 	}
 }

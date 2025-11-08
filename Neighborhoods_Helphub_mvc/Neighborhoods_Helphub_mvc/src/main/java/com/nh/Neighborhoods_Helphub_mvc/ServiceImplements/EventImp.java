@@ -10,24 +10,24 @@ import com.nh.Neighborhoods_Helphub_mvc.Entity.Eventregistration;
 public class EventImp {
 	
 	@Autowired
-	RestTemplate rt;
+	RestTemplate restTemplate;
 	
 	String baseUrl="http://localhost:8082/";
 
 	public Eventregistration AddEvenet(Eventregistration e) {
-		return rt.postForObject(baseUrl + "registerEvent", e, Eventregistration.class);
+		return restTemplate.postForObject(baseUrl + "registerEvent", e, Eventregistration.class);
 	}
 
 	public Eventregistration[] viewEvent(String status) {
-	  return	rt.getForObject(baseUrl + "SearchData/" + status,Eventregistration[].class );
+	  return	restTemplate.getForObject(baseUrl + "SearchData/" + status,Eventregistration[].class );
 	}
 
 	public void rejectEvent(int eId) {
-           rt.delete(baseUrl + "rejectEvent/" + eId );		
+		restTemplate.delete(baseUrl + "rejectEvent/" + eId );		
 	}
 
 	public void approveEvent(int eId) {
-		  rt.put(baseUrl+"approveData/"+ eId,null);		
+		restTemplate.put(baseUrl+"approveData/"+ eId,null);		
 	}
 
 }

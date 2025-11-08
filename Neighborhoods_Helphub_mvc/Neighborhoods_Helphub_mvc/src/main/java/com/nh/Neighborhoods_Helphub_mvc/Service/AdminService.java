@@ -1,6 +1,5 @@
 package com.nh.Neighborhoods_Helphub_mvc.Service;
 
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,52 +10,52 @@ import com.nh.Neighborhoods_Helphub_mvc.ServiceImplements.AdminImp;
 public class AdminService {
 
 	@Autowired
-	AdminImp ai;
+	AdminImp adminImp;
 	
 	
 	public users[] viewAllData() {
-		return ai.viewAllData();
+		return adminImp.viewAllData();
 		
 	}
 
 
 	public void deleteData(int id) {
-		   ai.deleteData(id);		
+		adminImp.deleteData(id);		
 	}
 
 
 	public users editUser(int id) {
 
-		return ai.editUser(id);
+		return adminImp.editUser(id);
 	}
 
 
 	public void saveMember(users u) {
-		ai.saveMember(u);
+		adminImp.saveMember(u);
 		
 	}
 
 
 	public users save(users u) {
-		return ai.save(u);
+		return adminImp.save(u);
 		
 	}
 
 
 	public Long totalmember() {
-		return ai.totalmember();
+		return adminImp.totalmember();
 		
 	}
 
 
 	public Long ActiveMember() {
-	   return	ai.ActiveMember();
+	   return	adminImp.ActiveMember();
 		
 	}
 
 
 	public Long InactiveMember() {
-       return  ai.InactiveMember();		
+       return  adminImp.InactiveMember();		
 	}
 
 }

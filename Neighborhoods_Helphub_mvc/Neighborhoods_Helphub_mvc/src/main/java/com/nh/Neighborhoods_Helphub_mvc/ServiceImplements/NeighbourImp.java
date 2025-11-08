@@ -10,12 +10,12 @@ import com.nh.Neighborhoods_Helphub_mvc.DTO.NeighbourUserView;
 public class NeighbourImp {
 
 	@Autowired
-	RestTemplate rt;
+	RestTemplate restTemplate;
 	
 	String baseUrl="http://localhost:8082/";
 	
 	public NeighbourUserView[] ViewAllNeighbour() {
-		return rt.getForObject(baseUrl + "ViewNeighbourData",NeighbourUserView[].class );
+		return restTemplate.getForObject(baseUrl + "ViewNeighbourData",NeighbourUserView[].class );
 		
 	}
 

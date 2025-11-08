@@ -14,17 +14,17 @@ public class LoginController {
 
 	
 	@Autowired
-	LoginService ls;
+	LoginService loginService;
 	
 	@PostMapping("/adminlog")
 	public Admin AdminLogin(@RequestBody Admin a) {
 		
-		return ls.AdminLogin(a);
+		return loginService.AdminLogin(a);
 	}
 	
 	
 	@PostMapping("/userlog")
 	public users userlog(@RequestBody users u) {
-		return ls.Userlogin(u);
+		return loginService.Userlogin(u);
 	}
 }

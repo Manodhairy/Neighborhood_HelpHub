@@ -1,5 +1,7 @@
 package com.nh.Neighborhoods_Helphub_mvc.Controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,9 +18,12 @@ public class NeighborController {
 	NeighbourService ns;
 	
 	@GetMapping("/ViewAllNeighbour")
-	public String ViewAllNeighbour(Model m) {
+	public String ViewAllNeighbour(Model m,HttpSession hs) {
 		NeighbourUserView[] list=ns.ViewAllNeighbour();
 		m.addAttribute("NeighbourList",list);
+		String userName=(String) hs.getAttribute("userName");
+		 m.addAttribute("UserName", userName);
+		
 		return "UserWeb/Neighbourhood";
 		
 	}

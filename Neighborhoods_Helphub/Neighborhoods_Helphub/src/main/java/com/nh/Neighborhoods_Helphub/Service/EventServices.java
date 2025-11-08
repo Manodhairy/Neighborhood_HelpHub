@@ -11,35 +11,35 @@ import com.nh.Neighborhoods_Helphub.Repository.Eventrepo;
 @Service
 public class EventServices {
 	@Autowired
-	Eventrepo er;
+	Eventrepo eventrepo;
 
 	public Eventregistration save(Eventregistration e) {
-		return er.save(e);		
+		return eventrepo.save(e);		
 	}
 
 	
 
 	public Eventregistration[] FindByStatus(String status) {
-		return er.findByStatus(status);
+		return eventrepo.findByStatus(status);
 		
 	}
 
 
 
 	public void rejectEvent(int eId) {
-         er.deleteById(eId);		
+		eventrepo.deleteById(eId);		
 	}
 
 
 
 	public Eventregistration approve(int eId) {
-		Optional<Eventregistration> event=er.findById(eId);
+		Optional<Eventregistration> event=eventrepo.findById(eId);
 		
 		if(event.isPresent()) {
 			Eventregistration e=event.get();
 			e.setStatus("Approve");
 			
-		return	er.save(e);
+		return	eventrepo.save(e);
 			
 		}else {
 			 throw new RuntimeException("User not found with ID: " + eId);

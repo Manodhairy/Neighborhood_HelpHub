@@ -18,7 +18,7 @@ import com.nh.Neighborhoods_Helphub_mvc.Service.LoginService;
 public class LoginController {
 
 	@Autowired
-	LoginService ls;
+	LoginService loginService;
 	
 	
 	@PostMapping("/adminLogin")
@@ -26,7 +26,7 @@ public class LoginController {
 		
 		
 		
-		Admin admin =ls.AdminLogin(a);
+		Admin admin =loginService.AdminLogin(a);
 		if (admin != null) {
 			
 			hs.setAttribute("AdminName", admin.getAdminName());
@@ -52,7 +52,7 @@ public class LoginController {
 	
 	@PostMapping("/UserLogin")
 	public String UserLogin(@ModelAttribute users u, Model m, HttpSession hs) {
-	    users user = ls.userlogin(u);
+	    users user = loginService.userlogin(u);
 
 	    if (user != null) {
 	    	hs.setAttribute("userId",user.getId() );

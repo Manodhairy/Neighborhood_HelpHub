@@ -19,49 +19,49 @@ import com.nh.Neighborhoods_Helphub.Service.UsersService;
 public class AdminController {
 
 	@Autowired
-	UsersService us;
+	UsersService usersService;
 	
 	@GetMapping("/viewAllData")
 	public List<users> viewAllData(){
-	  return	us.viewAll();
+	  return	usersService.viewAll();
 	  
 	}
 	
 	@PostMapping("/addData")
      public void addData(@RequestBody users s) {
-		us.addData(s);
+		usersService.addData(s);
 
 	}
 	
 	@DeleteMapping("/deleteData/{id}")
 	public void deleteData(@PathVariable int id) {
-		us.DeleteData(id);
+		usersService.DeleteData(id);
 	}
 	
 	@GetMapping("/selectUser/{id}")
 	public Optional<users> selectData(@PathVariable int id) {
-		Optional<users> list=us.selectData(id);
+		Optional<users> list=usersService.selectData(id);
 		return list;
 	}
 	
 	@PutMapping("/updateData")
 	public Object updateData(@RequestBody users s) {
-		return us.update(s);
+		return usersService.update(s);
 	}
 	
 	@GetMapping("/totalmember")
 	public  long totalmember() {
 	
-		return us.totalMember();
+		return usersService.totalMember();
 	}
 	
 	@GetMapping("/activemember")
 	public long activemember() {
-		return us.ActiveMember();
+		return usersService.ActiveMember();
 	}
 	
 	@GetMapping("/inactivemember")
 	public long inactivemember() {
-		return us.inactivemember();
+		return usersService.inactivemember();
 	}
 }
