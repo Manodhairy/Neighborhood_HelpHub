@@ -10,56 +10,56 @@ import com.nh.Neighborhoods_Helphub_mvc.Entity.users;
 public class AdminImp {
 
 	@Autowired
-	RestTemplate rt;
+	RestTemplate restTemplate;
 	
 	
 	String baseUrl="http://localhost:8082/";
 	
 	
 	public users[] viewAllData() {
-		return rt.getForObject(baseUrl+ "viewAllData", users[].class);
+		return restTemplate.getForObject(baseUrl+ "viewAllData", users[].class);
 		
 	}
 
 
 	public void deleteData(int id) {
-		rt.delete(baseUrl+"deleteData/"+id);
+		restTemplate.delete(baseUrl+"deleteData/"+id);
 		
 	}
 
 
 	public users editUser(int id) {
-	  return 	rt.getForObject(baseUrl + "selectUser/" + id,users.class);
+	  return 	restTemplate.getForObject(baseUrl + "selectUser/" + id,users.class);
 		
 	}
 
 
 	public void saveMember(users u) {
-	    	rt.put(baseUrl + "updateData", u);
+		restTemplate.put(baseUrl + "updateData", u);
 		
 	}
 
 
 	public users save(users u) {
-	   return	rt.postForObject(baseUrl +"addData", u, users.class);
+	   return	restTemplate.postForObject(baseUrl +"addData", u, users.class);
 		
 	}
 
 
 	public Long totalmember() {
-		return  rt.getForObject(baseUrl +"totalmember", Long.class);
+		return  restTemplate.getForObject(baseUrl +"totalmember", Long.class);
 		
 	}
 
 
 	public Long ActiveMember() {
-		return rt.getForObject(baseUrl + "activemember", Long.class);
+		return restTemplate.getForObject(baseUrl + "activemember", Long.class);
 		
 	}
 
 
 	public Long InactiveMember() {
-		return rt.getForObject(baseUrl + "inactivemember", Long.class);
+		return restTemplate.getForObject(baseUrl + "inactivemember", Long.class);
 		
 	}
 

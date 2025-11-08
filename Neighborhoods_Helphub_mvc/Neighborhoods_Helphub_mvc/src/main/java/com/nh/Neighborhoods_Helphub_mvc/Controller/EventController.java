@@ -18,7 +18,7 @@ import com.nh.Neighborhoods_Helphub_mvc.Service.EventService;
 public class EventController {
 
 	@Autowired
-	EventService es;
+	EventService eventService;
 	
 	
     @PostMapping("/EventRegister")
@@ -27,7 +27,7 @@ public class EventController {
     	
     	e.setFullName(userName);
     	e.setStatus("pending");
-    	es.AddEvent(e);
+    	eventService.AddEvent(e);
     	
     	    m.addAttribute("UserName", userName);
     	    m.addAttribute("reqMsg", "Request Sent Successfully!");
@@ -40,7 +40,7 @@ public class EventController {
     @GetMapping("/AllEvent")
     public String AllEvent(Model m,HttpSession hs) {
     	  String status="approve";
-    	Eventregistration[] list=es.viewEvent(status);
+    	Eventregistration[] list=eventService.viewEvent(status);
     	
     	String userName=(String) hs.getAttribute("userName");
     	m.addAttribute("UserName", userName);
@@ -55,14 +55,14 @@ public class EventController {
     public String AdminEventInfo(Model m,HttpSession hs) {
     	//pending data show
     	String status="pending";
-    	Eventregistration[] list=es.viewEvent(status);
+    	Eventregistration[] list=eventService.viewEvent(status);
         m.addAttribute("eventList",list);
         String adminName=(String) hs.getAttribute("AdminName");
 		m.addAttribute("AdminName",adminName);
 		
 		//approve data show
 		String status1="approve";
-		Eventregistration[] list1=es.viewEvent(status1);
+		Eventregistration[] list1=eventService.viewEvent(status1);
 		m.addAttribute("eventListApprove",list1);
     	
     	return "Admin/EventInfo";
@@ -71,14 +71,14 @@ public class EventController {
     
     @RequestMapping("/rejectEvent")
     public String deleteEvent(@RequestParam  int eId) {
-    	es.rejectEvent(eId);
+    	eventService.rejectEvent(eId);
     	
     	return "redirect:/AdminEventInfo";
     }
     
     @GetMapping("/approveEvent")
     public String approveEvent(@RequestParam int eId) {
-    	es.approveEvent(eId);
+    	eventService.approveEvent(eId);
     	return "redirect:/AdminEventInfo";
     }
     

@@ -10,23 +10,23 @@ import com.nh.Neighborhoods_Helphub_mvc.ServiceImplements.EventImp;
 public class EventService {
 	
 	@Autowired
-	EventImp ei;
+	EventImp eventImp;
 
 	public Eventregistration AddEvent(Eventregistration e) {
-		return ei.AddEvenet(e);
+		return eventImp.AddEvenet(e);
 		
 	}
 
 	public Eventregistration[] viewEvent(String status) {
-		return ei.viewEvent(status);
+		return eventImp.viewEvent(status);
 	}
 
 	public void rejectEvent(int eId) {
-            ei.rejectEvent(eId);		
+		eventImp.rejectEvent(eId);		
 	}
 
 	public void approveEvent(int eId) {
-		   ei.approveEvent(eId);
+		eventImp.approveEvent(eId);
 		
 	}
 

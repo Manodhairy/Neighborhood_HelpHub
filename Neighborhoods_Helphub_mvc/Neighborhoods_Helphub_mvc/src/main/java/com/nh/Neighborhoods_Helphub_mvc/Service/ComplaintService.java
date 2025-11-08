@@ -11,37 +11,37 @@ import com.nh.Neighborhoods_Helphub_mvc.ServiceImplements.ComplaintImp;
 public class ComplaintService {
 	
 	@Autowired
-	ComplaintImp ci;
+	ComplaintImp complaintImp;
 
 	public Complaint submitComplaint(Complaint c, int userId) {
 		
-	return	ci.submitComplaint(c,userId);
+	return	complaintImp.submitComplaint(c,userId);
 	}
 
 	public ComplaintUserView[] ViewComplaintPage() {
-		  return  ci.ViewComplaintPage();
+		  return  complaintImp.ViewComplaintPage();
 		
 	}
 
 	public void resolveMessage(Complaint c, int complaintId) {
-		    ci.resolveMessage(c,complaintId);
+		complaintImp.resolveMessage(c,complaintId);
 		
 	}
 
 	public Complaint[] ViewComplaintForUser(int userId) {
-		return ci.ViewComplaintForUser(userId);
+		return complaintImp.ViewComplaintForUser(userId);
 		
 	}
 
 	public void updateMessage(int id, String message) {
 		   Complaint c=new Complaint();
 		   c.setMessage(message);
-		   ci.updateMessage(id,c);
+		   complaintImp.updateMessage(id,c);
 		
 	}
 
 	public void userResolveComplaint(int id) {
-		  ci.userResolveComplaint(id);
+		complaintImp.userResolveComplaint(id);
 		
 	}
 

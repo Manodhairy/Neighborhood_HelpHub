@@ -10,12 +10,12 @@ import com.nh.Neighborhoods_Helphub_mvc.ServiceImplements.NeighbourImp;
 public class NeighbourService {
 
 	@Autowired
-	NeighbourImp ni;
+	NeighbourImp neighbourImp;
 	
 	
 	
 	public NeighbourUserView[] ViewAllNeighbour() {
-		return ni.ViewAllNeighbour();
+		return neighbourImp.ViewAllNeighbour();
 		
 	}
 

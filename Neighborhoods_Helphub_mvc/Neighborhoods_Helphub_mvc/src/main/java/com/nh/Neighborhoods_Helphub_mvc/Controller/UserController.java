@@ -19,15 +19,15 @@ import com.nh.Neighborhoods_Helphub_mvc.Service.AdminService;
 public class UserController {
 
 	@Autowired
-	AdminService as;
+	AdminService adminService;
 	
 	
 	@GetMapping("/ViewAllData")
 	public String viewAllData(Model m,HttpSession hs) {
-		users[] list=as.viewAllData();
-		 long totalMember= as.totalmember();
-		long activeMember= as.ActiveMember();
-		long inactivemmeber=as.InactiveMember();
+		users[] list=adminService.viewAllData();
+		 long totalMember= adminService.totalmember();
+		long activeMember= adminService.ActiveMember();
+		long inactivemmeber=adminService.InactiveMember();
 		
 		m.addAttribute("TotalMember",totalMember);
 		m.addAttribute("ActiveMember",activeMember);
@@ -41,13 +41,13 @@ public class UserController {
 	
 	@GetMapping("/deleteRecord")
 	public String deletedata(@RequestParam ("id") int id) {
-		as.deleteData(id);
+		adminService.deleteData(id);
 	 return "redirect:/ViewAllData";
 	}
 	
 	@GetMapping("/editUser")
 	public String editUser(@RequestParam ("id") int id ,Model m) {
-		users u=as.editUser(id);
+		users u=adminService.editUser(id);
 		m.addAttribute("user",u);
 		return "Admin/UpdatePage";
 		
@@ -55,7 +55,7 @@ public class UserController {
 	
 	@PostMapping("/saveMember")
 	public String saveMember(@ModelAttribute users u) {
-		as.saveMember(u);
+		adminService.saveMember(u);
 		return "redirect:/ViewAllData";
 
 	}
@@ -63,7 +63,7 @@ public class UserController {
 	@PostMapping("/AddMember")
 	public String AddMember(@ModelAttribute users u,Model m) {
 		try {
-	        users res = as.save(u); // save user
+	        users res = adminService.save(u); // save user
 	        m.addAttribute("successMessage", " User added successfully!");
 	    } catch (Exception e) {
 	        m.addAttribute("errorMessage", " Failed to add user!");

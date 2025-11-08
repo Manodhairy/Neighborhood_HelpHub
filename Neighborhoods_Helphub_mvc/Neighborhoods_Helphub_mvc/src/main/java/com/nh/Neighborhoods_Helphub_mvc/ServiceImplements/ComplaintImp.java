@@ -11,7 +11,7 @@ import com.nh.Neighborhoods_Helphub_mvc.Entity.Complaint;
 public class ComplaintImp {
 	
 	@Autowired
-	RestTemplate rt;
+	RestTemplate restTemplate;
 	
 	String baseUrl="http://localhost:8082/";
 
@@ -20,32 +20,32 @@ public class ComplaintImp {
         		 
 		
 		
-	   return	rt.postForObject(baseUrl + "AddComplaint/" + userId, c, Complaint.class);
+	   return	restTemplate.postForObject(baseUrl + "AddComplaint/" + userId, c, Complaint.class);
 		
 	}
 
 	public ComplaintUserView[] ViewComplaintPage() {
-		  return   rt.getForObject(baseUrl + "ViewComplaint", ComplaintUserView[].class);
+		  return   restTemplate.getForObject(baseUrl + "ViewComplaint", ComplaintUserView[].class);
 		
 	}
 
 	public void resolveMessage(Complaint c, int complaintId) {
-		      rt.put(baseUrl + "resolveMessage/" + complaintId , c);
+		restTemplate.put(baseUrl + "resolveMessage/" + complaintId , c);
 		
 	}
 
 	public Complaint[] ViewComplaintForUser(int userId) {
-		 return rt.getForObject(baseUrl + "ViewComplaintForUser/" + userId, Complaint[].class);
+		 return restTemplate.getForObject(baseUrl + "ViewComplaintForUser/" + userId, Complaint[].class);
 		
 	}
 
 	public void updateMessage(int id, Complaint c) {
-		   rt.put(baseUrl + "updateMessage/" +id, c);
+		restTemplate.put(baseUrl + "updateMessage/" +id, c);
 		
 	}
 
 	public void userResolveComplaint(int id) {
-		  rt.put(baseUrl + "userResolveComplaint/" +id, Complaint.class);
+		restTemplate.put(baseUrl + "userResolveComplaint/" +id, Complaint.class);
 		
 	}
 

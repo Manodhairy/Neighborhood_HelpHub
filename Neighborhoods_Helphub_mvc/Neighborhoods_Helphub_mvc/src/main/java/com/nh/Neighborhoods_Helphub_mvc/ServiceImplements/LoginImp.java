@@ -12,7 +12,7 @@ public class LoginImp {
 
 	
 	@Autowired
-	RestTemplate rt;
+	RestTemplate restTemplate;
 	
 	
 	String baseUrl="http://localhost:8082/";
@@ -20,13 +20,13 @@ public class LoginImp {
 	
 	public Admin AdminLogin(Admin a) {
 		
-		return rt.postForObject(baseUrl+ "adminlog",a, Admin.class);
+		return restTemplate.postForObject(baseUrl+ "adminlog",a, Admin.class);
 		
 	}
 
 
 	public users userlogin(users u) {
-		return rt.postForObject(baseUrl +"userlog", u, users.class);
+		return restTemplate.postForObject(baseUrl +"userlog", u, users.class);
 		
 	}
 
