@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.nh.Neighborhoods_Helphub_mvc.DTO.ComplaintUserView;
 import com.nh.Neighborhoods_Helphub_mvc.Entity.Complaint;
+import com.nh.Neighborhoods_Helphub_mvc.Entity.SecurityGuard;
 import com.nh.Neighborhoods_Helphub_mvc.ServiceImplements.ComplaintImp;
 
 @Service
@@ -42,6 +43,11 @@ public class ComplaintService {
 
 	public void userResolveComplaint(int id) {
 		complaintImp.userResolveComplaint(id);
+		
+	}
+
+	public SecurityGuard[] ViewTheSecurityGuard() {
+		return complaintImp.ViewTheSecurityGuard();
 		
 	}
 

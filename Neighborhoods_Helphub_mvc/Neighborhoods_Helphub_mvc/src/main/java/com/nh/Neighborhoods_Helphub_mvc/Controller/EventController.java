@@ -27,6 +27,7 @@ public class EventController {
     	
     	e.setFullName(userName);
     	e.setStatus("pending");
+    	
     	eventService.AddEvent(e);
     	
     	    m.addAttribute("UserName", userName);

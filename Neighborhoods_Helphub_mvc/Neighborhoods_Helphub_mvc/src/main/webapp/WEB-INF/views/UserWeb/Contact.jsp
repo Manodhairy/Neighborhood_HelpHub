@@ -94,7 +94,39 @@
       </div>
 	  
     </div>
-	
+	<!-- 🛡️ Security Guard Info Section -->
+	<div class="container my-5">
+	  <div class="bg-white shadow rounded p-4 text-center">
+	    <h3 class="text-primary mb-4">
+	      <i class="fas fa-user-shield text-warning me-2"></i>
+	      Security Guard Information
+	    </h3>
+
+	    <div class="row justify-content-center">
+	      <c:forEach var="guard" items="${securityGuardsList}">
+	        <div class="col-md-5 col-lg-4 mb-4">
+	          <div class="card shadow-sm border-0 h-100">
+	            <div class="card-header bg-warning text-white">
+	              <h5 class="mb-0">${guard.guardName}</h5>
+	            </div>
+	            <div class="card-body">
+	              <p class="mb-2">
+	                <strong>Phone:</strong> ${guard.contact}
+	              </p>
+	              <p class="mb-2">
+	                <strong>Shift:</strong> ${guard.shift}
+	              </p>
+	              <p class="mb-0">
+	                <strong>Gate/Area:</strong> ${guard.assignedArea}
+	              </p>
+	            </div>
+	          </div>
+	        </div>
+	      </c:forEach>
+	    </div>
+	  </div>
+	</div>
+
 	
 	
 	<div class="container mt-4">
