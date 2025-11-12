@@ -160,7 +160,7 @@
 												<div class="col-4">
 													<div class="d-flex justify-content-end">
 														<img class="rounded-circle" width="40" height="40" alt=""
-															src="resources/assets1/img/avatars/avatar.jpg" />
+															src="resources/assets1/img/profile.jpg" />
 													</div>
 												</div>
 											</div>
@@ -168,7 +168,7 @@
 												<div class="col">
 													<ul class="nav nav-list-simple flex-column text-3">
 														<li class="nav-item">
-															<a class="nav-link" href="#">My Profile</a>
+															<a class="nav-link" href="UserProfile">My Profile</a>
 														</li>
 
 														<li class="nav-item">

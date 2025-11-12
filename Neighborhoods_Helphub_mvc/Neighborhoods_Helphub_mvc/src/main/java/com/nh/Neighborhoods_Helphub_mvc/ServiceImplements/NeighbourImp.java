@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.nh.Neighborhoods_Helphub_mvc.DTO.NeighbourUserView;
+import com.nh.Neighborhoods_Helphub_mvc.Entity.NeighbourData;
 
 @Service
 public class NeighbourImp {
@@ -16,6 +17,15 @@ public class NeighbourImp {
 	
 	public NeighbourUserView[] ViewAllNeighbour() {
 		return restTemplate.getForObject(baseUrl + "ViewNeighbourData",NeighbourUserView[].class );
+		
+	}
+
+	public NeighbourUserView UserProfile(int userId) {
+		return restTemplate.getForObject(baseUrl + "ViewUserData/" + userId,NeighbourUserView.class);
+	}
+
+	public NeighbourData updateProfileUpadateData(NeighbourData neighbourData, int userId) {
+		   return    restTemplate.postForObject(baseUrl + "AddNeighbourData/" + userId, neighbourData, NeighbourData.class);
 		
 	}
 

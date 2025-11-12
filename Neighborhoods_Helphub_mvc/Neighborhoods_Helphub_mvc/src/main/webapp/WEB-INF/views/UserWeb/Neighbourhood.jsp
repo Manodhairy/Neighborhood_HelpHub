@@ -35,37 +35,7 @@
 
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T21B0FFW8M"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag("js", new Date());
-
-		gtag("config", "G-T21B0FFW8M");
-	</script>
-	<style>
-	.member-card {
-	    transition: all 0.3s ease;
-	    border-radius: 15px;
-	    background: #fff;
-	}
-	.member-card:hover {
-	    transform: translateY(-6px);
-	    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-	}
-	.hover-linkedin:hover { color: #0a66c2 !important; }
-	.hover-instagram:hover { color: #e4405f !important; }
-
-	.modal-content {
-	    border-radius: 15px;
-	}
-	@media (max-width: 767px) {
-	    .modal-dialog {
-	        margin: 1rem;
-	    }
-	}
-	</style>
+	
 
 </head>
 
@@ -83,8 +53,8 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8 order-2 order-md-1 align-self-center p-static">
-							<h1>Our <strong>Team</strong></h1>
-							<span class="sub-title">We are proud to introduce you to our team.</span>
+							<h1>Our <strong>Neighbour's</strong></h1>
+							<span class="sub-title">We are proud to introduce you to our Neighbour's.</span>
 						</div>
 						<div class="col-md-4 order-1 order-md-2 align-self-center">
 							
@@ -108,9 +78,7 @@
 					<li class="nav-item" data-option-value=".Electrician">
 						<a class="nav-link text-2-5 text-uppercase" href="#">Electrician</a>
 					</li>
-					<li class="nav-item" data-option-value=".Software devloper">
-						<a class="nav-link text-2-5 text-uppercase" href="#">SoftWare Devloper</a>
-					</li>
+					
 				</ul>
 
 				<div class="sort-destination-loader sort-destination-loader-showing mt-4 pt-2">

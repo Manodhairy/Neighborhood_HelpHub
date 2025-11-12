@@ -74,4 +74,9 @@ public class HomeController {
 	public String Neighbor() {
 		return "redirect:/ViewAllNeighbour";
 	}
+	
+	@GetMapping("/UserProfile")
+	public String UserProfile() {
+		return "redirect:/UserProfileData";
+	}
 }

@@ -1,6 +1,7 @@
 package com.nh.Neighborhoods_Helphub.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,4 +32,13 @@ public class NeighbourController {
 	public List<NeighbourUserView> ViewNeighbourData() {
 		return neighbourService.ViewNeighbourData();
 	}
+	
+	@GetMapping("/ViewUserData/{id}")
+	public Optional<NeighbourUserView> ViewUserData(@PathVariable users id) {
+		return neighbourService.ViewUserData(id);
+		
+	}
+	
+	
+	
 }

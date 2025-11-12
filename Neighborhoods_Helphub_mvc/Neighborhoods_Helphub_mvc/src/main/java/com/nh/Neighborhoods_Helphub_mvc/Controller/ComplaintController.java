@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.nh.Neighborhoods_Helphub_mvc.DTO.ComplaintUserView;
 import com.nh.Neighborhoods_Helphub_mvc.Entity.Complaint;
+import com.nh.Neighborhoods_Helphub_mvc.Entity.SecurityGuard;
 import com.nh.Neighborhoods_Helphub_mvc.Service.ComplaintService;
 
 @Controller
@@ -67,6 +68,9 @@ public class ComplaintController {
 		 m.addAttribute("userId",userId);
 	     String userName=(String) hs.getAttribute("userName");
 	     m.addAttribute("UserName", userName);
+	     
+	     SecurityGuard[] list1= complaintService.ViewTheSecurityGuard();
+	     m.addAttribute("securityGuardsList",list1);
 		 return "UserWeb/Contact";
 		
 	}
@@ -88,6 +92,7 @@ public class ComplaintController {
     	
       }
 	
-	
+      
+      
 	
 }
