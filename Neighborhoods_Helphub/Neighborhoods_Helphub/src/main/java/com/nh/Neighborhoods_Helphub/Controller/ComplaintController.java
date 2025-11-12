@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.nh.Neighborhoods_Helphub.DTO.ComplaintUserView;
 import com.nh.Neighborhoods_Helphub.Entity.Complaint;
 import com.nh.Neighborhoods_Helphub.Entity.users;
@@ -59,4 +57,7 @@ public class ComplaintController {
 	public Complaint userResolveComplaint(@PathVariable ("complaintId")  int complaintId) {
 	    return  complaintService.userResolveComplaint(complaintId);
 	}
+	
+	
+	
 }
