@@ -7,6 +7,7 @@ import org.springframework.web.client.RestTemplate;
 import com.nh.Neighborhoods_Helphub_mvc.DTO.ComplaintUserView;
 import com.nh.Neighborhoods_Helphub_mvc.Entity.Complaint;
 import com.nh.Neighborhoods_Helphub_mvc.Entity.SecurityGuard;
+import com.nh.Neighborhoods_Helphub_mvc.Entity.SecurityGuardHistory;
 
 @Service
 public class ComplaintImp {
@@ -55,6 +56,8 @@ public class ComplaintImp {
 		return restTemplate.getForObject(baseUrl + "ViewTheSecurityGuard", SecurityGuard[].class);
 		
 	}
+
+	
 
 	
 

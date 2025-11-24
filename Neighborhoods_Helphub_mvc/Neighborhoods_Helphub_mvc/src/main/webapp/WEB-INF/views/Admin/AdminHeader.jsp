@@ -88,11 +88,18 @@
 					
 					
 					<li class="side-nav-item">
-										    <a href="ComplaintPage" class="side-nav-link">
-										        <span class="menu-icon"><i class="ti ti-list"></i></span>
-										        <span class="menu-text"> Complaint's</span>
-							   </a>
+						   <a href="ComplaintPage" class="side-nav-link">
+						   <span class="menu-icon"><i class="ti ti-alert-triangle"></i></span>
+						   <span class="menu-text"> Complaint's</span>
+							 </a>
 					</li>
+					
+					<li class="side-nav-item">	
+		                  <a href="SecurityGuardPage" class="side-nav-link">
+						 <span class="menu-icon"><i class="ti ti-user-shield"></i></span>
+						 <span class="menu-text"> Security Guard</span>
+						 </a>
+						</li>
 
 					
 					
