@@ -79,4 +79,9 @@ public class HomeController {
 	public String UserProfile() {
 		return "redirect:/UserProfileData";
 	}
+	
+	@GetMapping("/SecurityGuardPage")
+	public String SecurityGuardPage() {
+		return "redirect:/ViewAllSecurityGuard";
+	}
 }
