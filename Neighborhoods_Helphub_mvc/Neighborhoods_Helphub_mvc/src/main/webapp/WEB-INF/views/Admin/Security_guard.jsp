@@ -261,10 +261,10 @@
 					                    <tbody>
 					                    <c:forEach var="h" items="${historyList}" varStatus="i">
 					                        <tr>
-					                            <td>${i.count}</td>        <!-- Auto Index -->
-					                            <td>${h.id}</td>           <!-- History ID -->
-					                            <td>${h.guardId}</td>       <!-- Guard ID -->
-					                            <td>${h.guardName}</td>
+					                            <td>${i.count}</td>        
+					                            <td>${h.id}</td>          
+					                            <td>${h.guardId}</td>
+																	                            <td>${h.guardName}</td>
 					                            <td>${h.assignedArea}</td>
 					                            <td>${h.shift}</td>
 					                            <td>${h.status}</td>

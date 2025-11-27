@@ -84,4 +84,12 @@ public class HomeController {
 	public String SecurityGuardPage() {
 		return "redirect:/ViewAllSecurityGuard";
 	}
+	
+	@GetMapping("/shops")
+	public String shops(HttpSession hs,Model m) {
+		
+		String userName=(String) hs.getAttribute("userName");
+		m.addAttribute("UserName",userName);
+		return "redirect:/viewAllShop";
+	}
 }
