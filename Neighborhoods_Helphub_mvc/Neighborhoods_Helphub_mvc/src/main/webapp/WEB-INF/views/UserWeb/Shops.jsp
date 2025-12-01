@@ -20,6 +20,7 @@
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="resources/assets1/img/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="resources/assets1/img/apple-touch-icon.png">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<!-- Mobile Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
@@ -28,6 +29,7 @@
 	<link id="googleFonts"
 		href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400&amp;display=swap"
 		rel="stylesheet" type="text/css">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 	<!-- Vendor CSS -->
 	<link rel="stylesheet" href="resources/assets1/vendor/bootstrap/css/bootstrap.min.css">
@@ -83,7 +85,7 @@
 
 			<div class="container">
 
-								<c:forEach var="shop" items="${shopList}">
+				<c:forEach var="shop" items="${shopList}">
 				    <div class="row align-items-center">
 				        <!-- LEFT: SHOP IMAGE -->
 				        <div class="col-sm-4 mb-4 mb-sm-0">
@@ -95,11 +97,8 @@
 				                        <span class="badge badge-ecommerce text-bg-success">Nearby Shop</span>
 				                    </div>
 
-				                    <!-- Quick View -->
-				                    <a href="shopDetails?id=${shop.id}"
-				                       class="quick-view text-uppercase font-weight-semibold text-2">
-				                        VIEW DETAILS
-				                    </a>
+				                    
+				                 
 
 				                    <!-- Shop Image -->
 				                    <a href="shopDetails?id=${shop.id}">
@@ -158,15 +157,24 @@
 				                            ${shop.openTime} - ${shop.closeTime}
 				                        </strong>
 				                    </li>
+									<li> Email:
+								       <strong class="text-color-dark">
+								         ${shop.email} 
+									   </strong>
+						            </li>									
+									
 				                </ul>
 
 				                <!-- BUTTON -->
-				                <div class="mt-3">
-				                    <a href="shopDetails?id=${shop.id}"
-				                       class="btn btn-primary btn-sm px-4 rounded-3">
-				                        View Shop
-				                    </a>
-				                </div>
+								<div class="mt-3">
+								    <button class="btn btn-primary btn-sm px-4 rounded-3 orderBtn"
+								            data-id="${shop.id}"
+								            data-name="${shop.shopName}">
+								        Order
+								    </button>
+								</div>
+
+
 				            </div>
 				        </div>
 
@@ -177,6 +185,56 @@
 
 				    </div>
 				</c:forEach>
+				
+				<!-- ORDER POPUP -->
+				<div id="orderModal" class="modal fade" tabindex="-1" aria-hidden="true">
+				    <div class="modal-dialog modal-lg modal-dialog-centered">
+				        <div class="modal-content">
+
+				            <div class="modal-header bg-primary text-white">
+				                <h5 class="modal-title">Place Order</h5>
+				                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				            </div>
+
+				            <div class="modal-body">
+				                <!-- IMPORTANT: action must match Spring controller URL -->
+				                <form id="orderForm" action="placeOrder" method="post">
+
+				                    <input type="hidden" id="shopId" name="shopId">
+				                    <input type="hidden" name="flat_no" value="${userList.flat_no}">
+									<input type="hidden" name="mobile_no" value="${userList.mobile_no}">
+
+				                    <!-- Shop Name -->
+				                    <div class="mb-3">
+				                        <label class="fw-bold">Shop</label>
+				                        <input type="text" id="shopName" class="form-control" readonly>
+				                    </div>
+
+				                    <!-- User Name -->
+				                    <div class="mb-3">
+				                        <label class="fw-bold">Your Name</label>
+				                        <input type="text" name="fullName"
+				                               value="${userList.fullName}" class="form-control" readonly>
+				                    </div>
+
+				                    <!-- Order -->
+				                    <div class="mb-3">
+				                        <label class="fw-bold">Order Details</label>
+				                        <textarea name="orderDetails" class="form-control" rows="4" required></textarea>
+				                    </div>
+
+				                    <div class="text-end">
+				                        <button type="submit" class="btn btn-success">Place Order</button>
+				                    </div>
+				                </form>
+				            </div>
+
+				        </div>
+				    </div>
+				</div>
+
+
+				</div>
 
 
 		</div>
@@ -203,6 +261,49 @@
 
 	<!-- Theme Initialization Files -->
 	<script src="resources/assets1/js/theme.init.js"></script>
+	
+	<script>
+	$(document).ready(function () {
+
+	    // When user clicks order button
+	    $(".orderBtn").on("click", function () {
+	        let shopId = $(this).data("id");
+	        let shopName = $(this).data("name");
+
+	        $("#shopId").val(shopId);
+	        $("#shopName").val(shopName);
+
+	        $("#orderModal").modal("show");
+	    });
+
+	});
+	</script>
+	
+	
+	<script>
+	    // SUCCESS
+	    <c:if test="${param.success == 'true'}">
+	        Swal.fire({
+	            title: "Order Sent!",
+	            text: "Your order was successfully emailed to the shop.",
+	            icon: "success",
+	            confirmButtonColor: "#28a745",
+	            confirmButtonText: "OK"
+	        });
+	    </c:if>
+
+	    // ERROR
+	    <c:if test="${param.error == 'true'}">
+	        Swal.fire({
+	            title: "Error!",
+	            text: "Something went wrong. Please try again.",
+	            icon: "error",
+	            confirmButtonColor: "#dc3545",
+	            confirmButtonText: "OK"
+	        });
+	    </c:if>
+	</script>
+
 
 </body>
 

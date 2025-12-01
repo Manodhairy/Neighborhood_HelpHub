@@ -18,5 +18,10 @@ public class ShopImp {
 	  return	restTemplate.getForObject(baseUrl + "ViewAllShop", Shop[].class);
 		
 	}
+
+	public Shop findById(int shopId) {
+		return restTemplate.getForObject(baseUrl +"ShopData/" + shopId,Shop.class);
+		
+	}
 	
 }

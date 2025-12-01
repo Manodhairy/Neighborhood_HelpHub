@@ -13,12 +13,16 @@ public class Shop {
 	    private String imageUrl;
 	    private String openTime;
 	    private String closeTime;
+	    private String email;
 	    
 	    
 	    
 	    public Shop() {}
+
+
+
 		public Shop(int id, String shopName, String ownerName, String category, String address, String description,
-				String contact, String imageUrl, String openTime, String closeTime) {
+				String contact, String imageUrl, String openTime, String closeTime, String email) {
 			super();
 			this.id = id;
 			this.shopName = shopName;
@@ -30,67 +34,145 @@ public class Shop {
 			this.imageUrl = imageUrl;
 			this.openTime = openTime;
 			this.closeTime = closeTime;
+			this.email = email;
 		}
+
+
+
 		public int getId() {
 			return id;
 		}
+
+
+
 		public void setId(int id) {
 			this.id = id;
 		}
+
+
+
 		public String getShopName() {
 			return shopName;
 		}
+
+
+
 		public void setShopName(String shopName) {
 			this.shopName = shopName;
 		}
+
+
+
 		public String getOwnerName() {
 			return ownerName;
 		}
+
+
+
 		public void setOwnerName(String ownerName) {
 			this.ownerName = ownerName;
 		}
+
+
+
 		public String getCategory() {
 			return category;
 		}
+
+
+
 		public void setCategory(String category) {
 			this.category = category;
 		}
+
+
+
 		public String getAddress() {
 			return address;
 		}
+
+
+
 		public void setAddress(String address) {
 			this.address = address;
 		}
+
+
+
 		public String getDescription() {
 			return description;
 		}
+
+
+
 		public void setDescription(String description) {
 			this.description = description;
 		}
+
+
+
 		public String getContact() {
 			return contact;
 		}
+
+
+
 		public void setContact(String contact) {
 			this.contact = contact;
 		}
+
+
+
 		public String getImageUrl() {
 			return imageUrl;
 		}
+
+
+
 		public void setImageUrl(String imageUrl) {
 			this.imageUrl = imageUrl;
 		}
+
+
+
 		public String getOpenTime() {
 			return openTime;
 		}
+
+
+
 		public void setOpenTime(String openTime) {
 			this.openTime = openTime;
 		}
+
+
+
 		public String getCloseTime() {
 			return closeTime;
 		}
+
+
+
 		public void setCloseTime(String closeTime) {
 			this.closeTime = closeTime;
 		}
+
+
+
+		public String getEmail() {
+			return email;
+		}
+
+
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+
+
+		
+		
 	    
 	    
 	    
