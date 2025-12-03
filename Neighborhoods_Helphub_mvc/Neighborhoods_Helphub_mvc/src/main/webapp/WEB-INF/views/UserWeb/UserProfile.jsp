@@ -79,7 +79,7 @@
               <a class="nav-link" href="#"><i class="fa fa-cog me-2"></i> Settings</a>
             </li>
             <li class="nav-item mb-2">
-              <a class="nav-link" href="#"><i class="fa fa-wallet me-2"></i> Billing</a>
+              <a class="nav-link" href="Billing"><i class="fa fa-wallet me-2"></i> Billing</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="logout"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>

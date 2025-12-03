@@ -17,7 +17,7 @@ public class Complaint {
 	   @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private int complaintId;
 	  
-	   @ManyToOne
+	    @ManyToOne
 	    @JoinColumn(name = "user_id")
 	    private users user;
 

@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class HomeController {
@@ -27,18 +28,15 @@ public class HomeController {
 	}
 	
 	@GetMapping("/HomeData")
-	public String homedata( HttpSession hs,Model m) {
-		String userName=(String) hs.getAttribute("userName");
-		m.addAttribute("UserName",userName);
+	public String homedata( ) {
+		
 		return "UserWeb/HomePage";
 	}
 	
 	
 	@GetMapping("/EventInfo")
-	private String eventData(HttpSession hs,Model m){
-		String userName=(String) hs.getAttribute("userName");
-		 m.addAttribute("UserName", userName);
-		return "redirect:/AllEvent";
+	private String eventData(){
+				return "redirect:/AllEvent";
 	}
 	
 	
@@ -49,14 +47,8 @@ public class HomeController {
 	
 	
 	@GetMapping("/contact")
-	public String contact(HttpSession hs,Model m) {
-		String userName=(String) hs.getAttribute("userName");
-		 m.addAttribute("UserName", userName);
-		 
-		 
-		 int userId=   (int) hs.getAttribute("userId");
-		 
-		 m.addAttribute("userId",userId);
+	public String contact() {
+		
 
 		return "redirect:/ViewComplaintForUser";
 	}
@@ -86,10 +78,15 @@ public class HomeController {
 	}
 	
 	@GetMapping("/shops")
-	public String shops(HttpSession hs,Model m) {
+	public String shops() {
 		
-		String userName=(String) hs.getAttribute("userName");
-		m.addAttribute("UserName",userName);
 		return "redirect:/viewAllShop";
 	}
+	
+	@GetMapping("/Billing")
+	public String Billing() {
+		return "redirect:/ViewBills";
+	}
+	
+	
 }

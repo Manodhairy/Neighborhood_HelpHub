@@ -41,7 +41,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="full_name" class="form-label">Full Name</label>
-                                    <input type="text" id="full_name" name="fullName" class="form-control" value="${user.full_name}">
+                                    <input type="text" id="full_name" name="fullName" class="form-control" value="${user.fullName}">
                                 </div>
 
                                 <div class="mb-3">
