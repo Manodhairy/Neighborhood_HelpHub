@@ -107,17 +107,7 @@
                           </a>
 
                         </li>
-                        <li class="dropdown">
-                          <a class="dropdown-item dropdown-toggle" href="#">
-                            Pages
-                          </a>
-
-                        </li>
-
-                        <li class="dropdown">
-                          <a class="dropdown-item dropdown-toggle" href="#">
-                            Blog
-                          </a>
+                        
 
                         </li>
                         <li class="dropdown">
