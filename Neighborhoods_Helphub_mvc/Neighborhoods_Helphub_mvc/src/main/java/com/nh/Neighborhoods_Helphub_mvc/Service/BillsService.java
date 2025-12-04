@@ -17,6 +17,17 @@ public class BillsService {
 		
 	}
 
+	public boolean PaymentDone(String refNo, int id) {
+		
+		Bills c=new Bills();
+		c.setRefNo(refNo);;
+		  
+		
+		return billsImp.PaymentDone(id,c);
+	}
+
+	
+
 	
 
 }

@@ -19,4 +19,18 @@ public class BillsImp {
 		
 	}
 
+	public boolean PaymentDone(int id,Bills obj) {
+		
+		try {
+		restTemplate.put(baseUrl + "PaymentDone/"+ id, obj);
+		return true;
+		}catch(Exception e) {
+			return false;
+		}
+		
+		
+	}
+
+	
+	
 }
