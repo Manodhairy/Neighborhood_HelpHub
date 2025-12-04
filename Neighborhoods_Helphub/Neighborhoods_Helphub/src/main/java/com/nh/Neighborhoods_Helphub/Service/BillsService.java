@@ -1,5 +1,6 @@
 package com.nh.Neighborhoods_Helphub.Service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,28 @@ public class BillsService {
 
 	public Optional<Bills> ViewBill(users id) {
 		return billRepo.findByUser(id);		
+	}
+
+	
+
+	public Bills PaymentDone(Bills bill, users id) {
+		    Optional<Bills> billData=  billRepo.findByUser(id);
+		    
+		    if(billData.isPresent()) {
+		    	Bills obj=billData.get();
+		    	
+		    	obj.setRefNo(bill.getRefNo());
+		    	LocalDateTime paidDate=LocalDateTime.now();
+		    	obj.setPaidDate(paidDate);
+		    	
+		    	return billRepo.save(obj);
+		    	
+		    	
+		    	
+		    }
+			return bill;
+		    
+		    
+		
 	}
 }
