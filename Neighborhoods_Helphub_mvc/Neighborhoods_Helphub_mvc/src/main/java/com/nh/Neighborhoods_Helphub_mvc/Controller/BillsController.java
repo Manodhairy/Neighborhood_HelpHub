@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.nh.Neighborhoods_Helphub_mvc.Entity.Bills;
 import com.nh.Neighborhoods_Helphub_mvc.Service.BillsService;
@@ -25,4 +28,24 @@ public class BillsController {
 		return "UserWeb/Billing";
 		
 	}
+	
+	
+	@PostMapping("/PaymentDone")
+	public String PaymentDone(@RequestParam ("refNo") String refNo,HttpSession hs,RedirectAttributes r) {
+		int id=   (int) hs.getAttribute("userId");
+		boolean result =	billsService.PaymentDone(refNo,id);
+		
+		if (result) {
+            r.addFlashAttribute("succ","Payment completed successfully!");
+        } else {
+        	 r.addFlashAttribute("error","Invalid Reference Number!");
+        }
+		
+		return "redirect:/ViewBills";
+		
+	}
+	
+	
+	
+
 }

@@ -1,3 +1,5 @@
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en"
 	data-style-switcher-options="{'showBordersStyle': true, 'showLayoutStyle': false, 'showBackgroundColor': false, 'colorPrimary': '#00a1cd', 'colorSecondary': '#183f72', 'colorTertiary': '#0281d7', 'colorQuaternary': '#383f48', 'borderRadius': 4}">
@@ -48,6 +50,7 @@
 
 	<!-- Theme Custom CSS -->
 	<link rel="stylesheet" href="resources/assets1/css/custom.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T21B0FFW8M"></script>
@@ -103,7 +106,7 @@
 								nec vehicula elit. </p>
 						</div>
 					</div>
-					<d					<div class="row mb-5">
+										<div class="row mb-5">
 						<div class="col">
 							<div class="owl-carousel nav-arrows-1 custom-carousel-box-shadow-2"
 								data-plugin-options="{
@@ -149,9 +152,13 @@
 												</span>
 											</p>
 
-											<a href="pay-rent.jsp" class="btn btn-primary btn-lg mt-3 px-5">
-												Pay Rent
+											<a onclick="openPaymentModal('Rent', '${bill.houseRent}')"
+											   class="btn btn-primary btn-lg mt-3 px-5">
+											    Pay Rent
 											</a>
+
+
+
 										</div>
 									</div>
 								</div>
@@ -178,9 +185,12 @@
 												Bill Generated Every Month
 											</p>
 
-											<a href="pay-water.jsp" class="btn btn-primary btn-lg mt-3 px-5">
-												Pay Water Bill
+											<a onclick="openPaymentModal('Water Bill', '${bill.waterBill}')"
+											   class="btn btn-primary btn-lg mt-3 px-5">
+											    Pay Water Bill
 											</a>
+
+
 										</div>
 									</div>
 								</div>
@@ -208,9 +218,13 @@
 												Based on Meter Reading
 											</p>
 
-											<a href="pay-electricity.jsp" class="btn btn-primary btn-lg mt-3 px-5">
-												Pay Electricity Bill
+											<a onclick="openPaymentModal('Electricity Bill', '${bill.electricityBill}')"
+											   class="btn btn-primary btn-lg mt-3 px-5">
+											    Pay Electricity
 											</a>
+
+
+
 										</div>
 									</div>
 								</div>
@@ -239,9 +253,12 @@
 												
 											</p>
 
-											<a href="pay-maintenance.jsp" class="btn btn-primary btn-lg mt-3 px-5">
-												Pay Maintenance
+											<a onclick="openPaymentModal('Maintenance', '${bill.maintenanceCharges}')"
+											   class="btn btn-primary btn-lg mt-3 px-5">
+											    Pay Maintenance
 											</a>
+
+
 
 										</div>
 									</div>
@@ -300,7 +317,71 @@
 		
 	</div>
 
+	<!-- ================= PAYMENT MODAL ================= -->
+	<div class="modal fade" id="paymentModal" tabindex="-1">
+	    <div class="modal-dialog modal-dialog-centered">
+	        <div class="modal-content">
+
+	            <!-- Header -->
+	            <div class="modal-header bg-primary text-white">
+	                <h5 class="modal-title">Scan to Pay</h5>
+	                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+	            </div>
+
+	            <!-- Body -->
+	            <div class="modal-body text-center">
+
+	                <p class="text-3">
+	                    <strong>Bill Type:</strong> <span id="billType"></span><br>
+	                    <strong>Amount:</strong>  <span id="billAmount"></span>
+	                </p>
+
+	                <img id="qrImg"
+	                     style="width:260px;height:260px;border:1px solid #ccc;border-radius:10px;">
+
+	                <p class="mt-3 text-muted">
+	                    Scan with Google Pay / PhonePe / Paytm
+	                </p>
+	            </div>
+				
+				<!-- FORM START -->
+				                <form id="paymentForm" action="PaymentDone" method="post">
+
+				                   
+
+				                    <div class="mt-3 text-start">
+				                        <label class="fw-bold mb-1" for="refNo">Reference No / UTR No</label>
+				                        <input type="text"
+				                               name="refNo"
+				                               id="refNo"
+				                               class="form-control w-80"
+				                               placeholder="Enter Payment Reference No"
+				                               required>
+				                    </div>
+
+				                    <!-- SUBMIT BUTTON -->
+				                    <button type="submit"
+				                            class="btn btn-success w-80 mt-3 ml-3"
+				                            >
+				                        Submit Payment
+				                    </button>
+
+				                </form>
+
+	            <!-- Footer -->
+	            <div class="modal-footer">
+	                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+	            </div>
+
+	        </div>
+	    </div>
+	</div>
+
 	
+
+	
+
+
 
 
 	<!-- Vendor -->
@@ -314,6 +395,63 @@
 
 	<!-- Theme Initialization Files -->
 	<script src="resources/assets1/js/theme.init.js"></script>
+	<script src="resources/assets1/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<script>
+	//<![CDATA[
+	
+	let checkInterval;
+	function openPaymentModal(type, amount) {
+
+	    document.getElementById("billType").innerText = type;
+	    document.getElementById("billAmount").innerText = amount;
+
+	    const upi = "bantigalave@ybl";
+	    const name = "Sunshine Heights";
+
+	    const upiUrl = "upi://pay?pa=" + upi + "&pn=" + encodeURIComponent(name) +
+	                   "&am=" + amount + "&cu=INR";
+
+	    const qrApi = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="
+	        + encodeURIComponent(upiUrl);
+
+	    document.getElementById("qrImg").src = qrApi;
+
+	   let popup= new bootstrap.Modal(document.getElementById('paymentModal'));
+	   popup.show();
+	   
+	   
+	}
+	
+	
+	
+	
+	//]]>
+	</script>
+
+	<c:if test="${not empty succ}">
+	    <script>
+	        Swal.fire({
+	            icon: 'success',
+	            title: 'Success',
+	            text: '${succ}',
+	            confirmButtonColor: '#3085d6'
+	        });
+	    </script>
+	</c:if>
+
+	<c:if test="${not empty error}">
+	    <script>
+	        Swal.fire({
+	            icon: 'error',
+	            title: 'Error',
+	            text: '${error}',
+	            confirmButtonColor: '#d33'
+	        });
+	    </script>
+	</c:if>
+
+
 
 </body>
 
