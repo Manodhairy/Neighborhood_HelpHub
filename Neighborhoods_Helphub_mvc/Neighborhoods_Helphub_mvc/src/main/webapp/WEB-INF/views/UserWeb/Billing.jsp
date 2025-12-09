@@ -10,7 +10,8 @@
 	<!-- Basic -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<link rel="shortcut icon" href="resources/assets/images/favicon.ico" type="image/x-icon" />
+	  	<link rel="apple-touch-icon" href="resources/assets1/img/apple-touch-icon.png">
 	
 
 	<meta name="keywords" content="WebSite Template" />
@@ -139,10 +140,7 @@
 												Due: <b>${bill.dueDate}</b>
 											</p>
 
-											<p class="text-muted text-2">
-												<i class="far fa-clock me-2"></i>
-												Last Paid: <b>${bill.paidDate}</b>
-											</p>
+											
 
 											<p class="text-muted text-2">
 												<i class="fas fa-info-circle me-2"></i>
@@ -350,6 +348,8 @@
 				                   
 
 				                    <div class="mt-3 text-start">
+									
+										<input type="hidden" id="billTypeInput" name="billType">
 				                        <label class="fw-bold mb-1" for="refNo">Reference No / UTR No</label>
 				                        <input type="text"
 				                               name="refNo"
@@ -405,6 +405,7 @@
 
 	    document.getElementById("billType").innerText = type;
 	    document.getElementById("billAmount").innerText = amount;
+		document.getElementById("billTypeInput").value=type;
 
 	    const upi = "bantigalave@ybl";
 	    const name = "Sunshine Heights";
@@ -419,6 +420,7 @@
 
 	   let popup= new bootstrap.Modal(document.getElementById('paymentModal'));
 	   popup.show();
+	   
 	   
 	   
 	}

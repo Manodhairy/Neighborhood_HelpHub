@@ -5,7 +5,8 @@
 
 	
 
-
+<link rel="shortcut icon" href="resources/assets/images/favicon.ico" type="image/x-icon" />
+  	<link rel="apple-touch-icon" href="resources/assets1/img/apple-touch-icon.png">
 
 	<!-- Web Fonts  -->
 	<link id="googleFonts"

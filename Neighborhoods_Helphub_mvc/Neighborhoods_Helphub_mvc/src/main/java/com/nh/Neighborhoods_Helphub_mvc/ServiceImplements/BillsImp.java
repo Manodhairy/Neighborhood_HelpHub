@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.nh.Neighborhoods_Helphub_mvc.Entity.Bills;
+import com.nh.Neighborhoods_Helphub_mvc.Entity.users;
 
 @Service
 public class BillsImp {
@@ -30,6 +31,26 @@ public class BillsImp {
 		
 		
 	}
+
+	public Bills[] ViewAllBill() {
+		return restTemplate.getForObject(baseUrl + "ViewAllBill", Bills[].class);
+		
+	}
+
+	public void UpdateBill(Bills bills) {
+		
+		restTemplate.put(baseUrl + "UpdateBill", bills);
+	}
+
+	public users[] showUser() {
+		return restTemplate.getForObject(baseUrl + "viewAllData", users[].class);
+		
+	}
+
+	public void AddBill(Bills bills, int id) {
+		restTemplate.postForObject(baseUrl + "AddBills/" +id, bills, Bills.class);
+	}
+	
 
 	
 	

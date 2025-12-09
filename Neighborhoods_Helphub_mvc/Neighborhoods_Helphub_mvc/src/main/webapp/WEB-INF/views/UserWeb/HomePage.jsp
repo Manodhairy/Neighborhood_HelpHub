@@ -12,6 +12,8 @@
 	<meta name="keywords" content="WebSite Template" />
 	<meta name="description" content="Porto - Multipurpose Website Template" />
 	<meta name="author" content="okler.net" />
+	<link rel="shortcut icon" href="resources/assets/images/favicon.ico" type="image/x-icon" />
+	  	<link rel="apple-touch-icon" href="resources/assets1/img/apple-touch-icon.png">
 </head>
 
 <body data-plugin-page-transition>
