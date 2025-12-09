@@ -7,6 +7,8 @@
 <head>
   <!-- SweetAlert CSS + JS -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="resources/assets/images/favicon.ico" type="image/x-icon" />
+  	<link rel="apple-touch-icon" href="resources/assets1/img/apple-touch-icon.png">
 </head>
 
 <body>

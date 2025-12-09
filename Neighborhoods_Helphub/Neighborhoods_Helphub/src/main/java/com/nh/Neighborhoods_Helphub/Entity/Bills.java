@@ -27,6 +27,9 @@ public class Bills {
 	private LocalDateTime paidDate;
 	private String status;
 	private String refNo;
+	private String refNo1;
+	private String refNo2;
+	private String refNo3;
     private LocalDateTime createdAt = LocalDateTime.now();
     
     
@@ -37,7 +40,7 @@ public class Bills {
 
 	public Bills(int id, users user, String houseRent, String waterBill, String electricityBill,
 			String maintenanceCharges, String dueDate, LocalDateTime paidDate, String status, String refNo,
-			LocalDateTime createdAt) {
+			String refNo1, String refNo2, String refNo3, LocalDateTime createdAt) {
 		super();
 		this.id = id;
 		this.user = user;
@@ -49,6 +52,9 @@ public class Bills {
 		this.paidDate = paidDate;
 		this.status = status;
 		this.refNo = refNo;
+		this.refNo1 = refNo1;
+		this.refNo2 = refNo2;
+		this.refNo3 = refNo3;
 		this.createdAt = createdAt;
 	}
 
@@ -174,6 +180,42 @@ public class Bills {
 
 
 
+	public String getRefNo1() {
+		return refNo1;
+	}
+
+
+
+	public void setRefNo1(String refNo1) {
+		this.refNo1 = refNo1;
+	}
+
+
+
+	public String getRefNo2() {
+		return refNo2;
+	}
+
+
+
+	public void setRefNo2(String refNo2) {
+		this.refNo2 = refNo2;
+	}
+
+
+
+	public String getRefNo3() {
+		return refNo3;
+	}
+
+
+
+	public void setRefNo3(String refNo3) {
+		this.refNo3 = refNo3;
+	}
+
+
+
 	public LocalDateTime getCreatedAt() {
 		return createdAt;
 	}
@@ -183,8 +225,9 @@ public class Bills {
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
+
+
+
 	
-    
-    
 	
 }

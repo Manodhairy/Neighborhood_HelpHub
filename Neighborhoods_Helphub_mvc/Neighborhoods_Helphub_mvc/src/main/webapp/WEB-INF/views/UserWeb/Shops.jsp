@@ -18,8 +18,8 @@
 	<meta name="author" content="okler.net">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="resources/assets1/img/favicon.ico" type="image/x-icon" />
-	<link rel="apple-touch-icon" href="resources/assets1/img/apple-touch-icon.png">
+	<link rel="shortcut icon" href="resources/assets/images/favicon.ico" type="image/x-icon" />
+	  	<link rel="apple-touch-icon" href="resources/assets1/img/apple-touch-icon.png">
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<!-- Mobile Metas -->

@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class HomeController {
@@ -28,8 +27,10 @@ public class HomeController {
 	}
 	
 	@GetMapping("/HomeData")
-	public String homedata( ) {
+	public String homedata(Model m, HttpSession hs) {
 		
+        String userName = (String) hs.getAttribute("userName");
+        m.addAttribute("UserName", userName);
 		return "UserWeb/HomePage";
 	}
 	
@@ -89,4 +90,9 @@ public class HomeController {
 	}
 	
 	
+	@GetMapping("/BillsPage")
+	public String BillsPage() {
+		return "redirect:/ViewAllBill";
+	}
 }
+

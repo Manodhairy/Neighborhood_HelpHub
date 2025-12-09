@@ -100,6 +100,14 @@
 						 <span class="menu-text"> Security Guard</span>
 						 </a>
 						</li>
+						
+						
+					<li class="side-nav-item">	
+					         <a href="BillsPage" class="side-nav-link">
+				             <span class="menu-icon"><i class="ti ti-report-money"></i></span>
+							 <span class="menu-text"> Bills</span>
+							</a>
+					</li>	
 
 					
 					

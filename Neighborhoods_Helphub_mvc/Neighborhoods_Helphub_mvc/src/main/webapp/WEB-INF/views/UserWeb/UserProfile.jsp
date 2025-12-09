@@ -6,7 +6,8 @@
 	<!-- Basic -->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
+	<link rel="shortcut icon" href="resources/assets/images/favicon.ico" type="image/x-icon" />
+	  	<link rel="apple-touch-icon" href="resources/assets1/img/apple-touch-icon.png">
 	<%@ include file="NavBar.jsp" %>
 
 	
