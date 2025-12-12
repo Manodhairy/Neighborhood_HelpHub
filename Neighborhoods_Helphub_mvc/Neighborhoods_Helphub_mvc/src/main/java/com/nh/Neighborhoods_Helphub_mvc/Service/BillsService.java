@@ -28,8 +28,8 @@ public class BillsService {
 		return billsImp.PaymentDone(id,c);
 	}
 
-	public Bills[] ViewAllBill() {
-		return billsImp.ViewAllBill();
+	public Bills[] ViewAllBill(int page, int size) {
+		return billsImp.ViewAllBill(page,size);
 	}
 
 	public void UpdateBill(Bills bills) {
@@ -43,6 +43,10 @@ public class BillsService {
 
 	public void AddBill(Bills bills, int id) {
 		billsImp.AddBill(bills,id);
+	}
+
+	public long totalBills() {
+		return billsImp.totalBills();
 	}
 
 	

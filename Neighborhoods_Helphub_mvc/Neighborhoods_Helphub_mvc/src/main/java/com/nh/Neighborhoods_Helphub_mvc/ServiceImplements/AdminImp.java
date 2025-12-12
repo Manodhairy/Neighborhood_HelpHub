@@ -16,10 +16,13 @@ public class AdminImp {
 	String baseUrl="http://localhost:8082/";
 	
 	
-	public users[] viewAllData() {
-		return restTemplate.getForObject(baseUrl+ "viewAllData", users[].class);
-		
+	public users[] viewAllData(int page, int size) {
+	    return restTemplate.getForObject(
+	        baseUrl + "viewAllData?page=" + page + "&size=" + size,
+	        users[].class
+	    );
 	}
+
 
 
 	public void deleteData(int id) {

@@ -5,11 +5,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.nh.Neighborhoods_Helphub_mvc.Entity.users;
@@ -23,8 +21,11 @@ public class UserController {
 	
 	
 	@GetMapping("/ViewAllData")
-	public String viewAllData(Model m,HttpSession hs) {
-		users[] list=adminService.viewAllData();
+	public String viewAllData(Model m, HttpSession hs,
+	                          @RequestParam(defaultValue = "1") int page,
+	                          @RequestParam(defaultValue = "8") int size) {
+ 
+		users[] list=adminService.viewAllData(page,size);
 		 long totalMember= adminService.totalmember();
 		long activeMember= adminService.ActiveMember();
 		long inactivemmeber=adminService.InactiveMember();
@@ -36,6 +37,15 @@ public class UserController {
 		String adminName=(String) hs.getAttribute("AdminName");
 		m.addAttribute("AdminName",adminName);
 		m.addAttribute("user",list);
+		
+		int totalPages = (int) Math.ceil((double) totalMember / size);
+
+		m.addAttribute("currentPage", page);
+		m.addAttribute("totalPages", totalPages);
+		m.addAttribute("pageSize", size);
+
+		
+		
 		return "Admin/AdminHome";
 	}
 	

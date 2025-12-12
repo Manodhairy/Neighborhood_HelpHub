@@ -32,8 +32,8 @@ public class BillsImp {
 		
 	}
 
-	public Bills[] ViewAllBill() {
-		return restTemplate.getForObject(baseUrl + "ViewAllBill", Bills[].class);
+	public Bills[] ViewAllBill(int page, int size) {
+		return restTemplate.getForObject(baseUrl + "ViewAllBill?page=" + page + "&size=" + size, Bills[].class);
 		
 	}
 
@@ -43,12 +43,17 @@ public class BillsImp {
 	}
 
 	public users[] showUser() {
-		return restTemplate.getForObject(baseUrl + "viewAllData", users[].class);
+		return restTemplate.getForObject(baseUrl + "viewAllDataforBills", users[].class);
 		
 	}
 
 	public void AddBill(Bills bills, int id) {
 		restTemplate.postForObject(baseUrl + "AddBills/" +id, bills, Bills.class);
+	}
+
+	public Long totalBills() {
+	  return	restTemplate.getForObject(baseUrl + "billCount", long.class);
+		
 	}
 	
 

@@ -51,13 +51,19 @@ public class BillsController {
 	}
 	
 	@GetMapping("/ViewAllBill")
-	public String ViewAllBill(Model m) {
-		Bills[] list=billsService.ViewAllBill();
+	public String ViewAllBill(Model m,@RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "8") int size) {
+		Bills[] list=billsService.ViewAllBill(page,size);
 		m.addAttribute("bills",list);
 		users[] user=billsService.showUser();
 		m.addAttribute("user",user);
 
-		
+		 long totalBills = billsService.totalBills();   // Microservice must return count
+		    int totalPages = (int) Math.ceil((double) totalBills / size);
+
+		    m.addAttribute("currentPage", page);
+		    m.addAttribute("totalPages", totalPages);
+		    m.addAttribute("pageSize", size);
 		return "Admin/Bills";
 	}
 	
@@ -76,6 +82,7 @@ public class BillsController {
 		return "redirect:/ViewAllBill";
 		
 	}
+	
 	
 
 }
