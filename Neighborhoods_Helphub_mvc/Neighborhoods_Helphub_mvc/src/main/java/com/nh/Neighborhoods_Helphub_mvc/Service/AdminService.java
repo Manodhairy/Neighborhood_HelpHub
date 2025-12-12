@@ -13,8 +13,8 @@ public class AdminService {
 	AdminImp adminImp;
 	
 	
-	public users[] viewAllData() {
-		return adminImp.viewAllData();
+	public users[] viewAllData(int page, int size) {
+		return adminImp.viewAllData(page,size);
 		
 	}
 

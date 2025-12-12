@@ -218,25 +218,65 @@
                                                 Showing <span class="fw-semibold"></span> <span class="fw-semibold"></span> Results
                                             </div>
                                         </div>
-                                        <div class="col-sm-auto mt-3 mt-sm-0">
-                                            <ul class="pagination pagination-boxed pagination-sm mb-0 justify-content-center">
-                                                <li class="page-item disabled">
-                                                    <a href="#" class="page-link"><i class="ti ti-chevron-left"></i></a>
-                                                </li>
-                                                <li class="page-item active">
-                                                    <a href="#" class="page-link">1</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">2</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">3</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link"><i class="ti ti-chevron-right"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
+										<div class="card-footer">
+										    <div class="align-items-center justify-content-between row text-center text-sm-start">
+
+										        <div class="col-sm">
+										            <div class="text-muted">
+										                Page <span class="fw-semibold">${currentPage}</span> of 
+										                <span class="fw-semibold">${totalPages}</span>
+										            </div>
+										        </div>
+
+										        <div class="col-sm-auto mt-3 mt-sm-0">
+										            <ul class="pagination pagination-boxed pagination-sm mb-0 justify-content-center">
+
+										                <!-- PREVIOUS BUTTON -->
+										                <c:choose>
+										                    <c:when test="${currentPage == 1}">
+										                        <li class="page-item disabled">
+										                            <a class="page-link"><i class="ti ti-chevron-left"></i></a>
+										                        </li>
+										                    </c:when>
+										                    <c:otherwise>
+										                        <li class="page-item">
+										                            <a href="?page=${currentPage - 1}&size=${pageSize}" class="page-link">
+										                                <i class="ti ti-chevron-left"></i>
+										                            </a>
+										                        </li>
+										                    </c:otherwise>
+										                </c:choose>
+
+
+										                <!-- PAGE NUMBERS -->
+										                <c:forEach begin="1" end="${totalPages}" var="i">
+										                    <li class="page-item ${currentPage == i ? 'active' : ''}">
+										                        <a href="?page=${i}&size=${pageSize}" class="page-link">${i}</a>
+										                    </li>
+										                </c:forEach>
+
+
+										                <!-- NEXT BUTTON -->
+										                <c:choose>
+										                    <c:when test="${currentPage == totalPages}">
+										                        <li class="page-item disabled">
+										                            <a class="page-link"><i class="ti ti-chevron-right"></i></a>
+										                        </li>
+										                    </c:when>
+										                    <c:otherwise>
+										                        <li class="page-item">
+										                            <a href="?page=${currentPage + 1}&size=${pageSize}" class="page-link">
+										                                <i class="ti ti-chevron-right"></i>
+										                            </a>
+										                        </li>
+										                    </c:otherwise>
+										                </c:choose>
+
+										            </ul>
+										        </div>
+										    </div>
+										</div>
+
                                     </div> <!-- -->
                                 </div>
                             </div>

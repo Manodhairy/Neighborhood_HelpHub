@@ -75,57 +75,79 @@
           <!-- Forms Container -->
           <div class="form-container">
 
-            <!-- USER LOGIN FORM -->
-            <form id="userForm" class="form-slide user-form active text-start mb-3" action="UserLogin" method="post">
-              <div class="mb-3">
-                <label class="form-label">Full Name</label>
-                <input type="text" class="form-control" placeholder="Enter your Name" name="fullName">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-control" placeholder="Enter your email" name="email">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" placeholder="Enter your password" name="password">
-              </div>
-              <div class="d-flex justify-content-between mb-3">
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="userRemember">
-                  <label class="form-check-label" for="userRemember">Remember me</label>
-                </div>
-                <a href="#" class="text-muted border-bottom border-dashed">Forget Password</a>
-              </div>
-              <div class="d-grid">
-                <button class="btn btn-primary" type="submit">Login</button>
-              </div>
-            </form>
+			<!-- USER LOGIN FORM -->
+			<form id="userForm" class="form-slide user-form active text-start mb-3" action="UserLogin" method="post" novalidate>
 
-            <!-- ADMIN LOGIN FORM -->
-            <form id="adminForm" class="form-slide admin-form inactive text-start mb-3" action="adminLogin" method="post">
-              <div class="mb-3">
-                <label class="form-label">Admin Username</label>
-                <input type="text" class="form-control" placeholder="Enter admin username" name="adminName">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-control" placeholder="Enter your email" name="adminEmail">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" placeholder="Enter admin password" name="password">
-              </div>
-              <div class="d-flex justify-content-between mb-3">
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="adminRemember">
-                  <label class="form-check-label" for="adminRemember">Remember me</label>
-                </div>
-                <a href="#" class="text-muted border-bottom border-dashed">Forget Password</a>
-              </div>
-              <div class="d-grid">
-                <button class="btn btn-success" type="submit">Admin Login</button>
-              </div>
-            </form>
+			  <div class="mb-3">
+			    <label class="form-label">Full Name</label>
+			    <input type="text" class="form-control" placeholder="Enter your Name" name="fullName" required>
+			    <div class="invalid-feedback">Please enter your name</div>
+			  </div>
+
+			  <div class="mb-3">
+			    <label class="form-label">Email</label>
+			    <input type="email" class="form-control" placeholder="Enter your email" name="email" required>
+			    <div class="invalid-feedback">Enter a valid email</div>
+			  </div>
+
+			  <div class="mb-3">
+			    <label class="form-label">Password</label>
+			    <input type="password" class="form-control" placeholder="Enter your password" name="password" minlength="8" required>
+			    <div class="invalid-feedback">Minimum 8 characters required</div>
+			  </div>
+
+			  <div class="d-flex justify-content-between mb-3">
+			    <div class="form-check">
+			      <input type="checkbox" class="form-check-input" id="userRemember">
+			      <label class="form-check-label" for="userRemember">Remember me</label>
+			    </div>
+			    <a href="#" class="text-muted border-bottom border-dashed">Forget Password</a>
+			  </div>
+
+			  <div class="d-grid">
+			    <button class="btn btn-primary" type="submit">Login</button>
+			  </div>
+
+			</form>
+
+			<!-- ADMIN LOGIN FORM -->
+			<form id="adminForm" class="form-slide admin-form inactive text-start mb-3" 
+			      action="adminLogin" method="post" novalidate>
+
+			  <div class="mb-3">
+			    <label class="form-label">Admin Username</label>
+			    <input type="text" class="form-control" placeholder="Enter admin username" 
+			           name="adminName" required>
+			    <div class="invalid-feedback">Enter admin username</div>
+			  </div>
+
+			  <div class="mb-3">
+			    <label class="form-label">Email</label>
+			    <input type="email" class="form-control" placeholder="Enter your email" 
+			           name="adminEmail" required>
+			    <div class="invalid-feedback">Enter valid email</div>
+			  </div>
+
+			  <div class="mb-3">
+			    <label class="form-label">Password</label>
+			    <input type="password" class="form-control" placeholder="Enter admin password" 
+			           name="password" minlength="8" required>
+			    <div class="invalid-feedback">Password must be at least 8 characters</div>
+			  </div>
+
+			  <div class="d-flex justify-content-between mb-3">
+			    <div class="form-check">
+			      <input type="checkbox" class="form-check-input" id="adminRemember">
+			      <label class="form-check-label" for="adminRemember">Remember me</label>
+			    </div>
+			    <a href="#" class="text-muted border-bottom border-dashed">Forget Password</a>
+			  </div>
+
+			  <div class="d-grid">
+			    <button class="btn btn-success" type="submit">Admin Login</button>
+			  </div>
+
+			</form>
 
           </div>
 
@@ -194,7 +216,81 @@
        } 
     %>
   </script>
+  <script>
+  document.getElementById('userForm').addEventListener('submit', function(event){
+      if(!this.checkValidity()){
+          event.preventDefault();
+          event.stopPropagation();
+      }
+      this.classList.add('was-validated');
+  });
+  </script>
+  <script>
+  document.getElementById('adminForm').addEventListener('submit', function(event){
+      if(!this.checkValidity()){
+          event.preventDefault();
+          event.stopPropagation();
+      }
+      this.classList.add('was-validated');
+  });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
 
+      // USER FORM VALIDATION
+      const userForm = document.getElementById("userForm");
+      userForm.addEventListener("submit", function (event) {
+        if (!validateUser()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        userForm.classList.add("was-validated");
+      });
+
+      function validateUser() {
+        let fullName = document.getElementsByName("fullName")[0].value.trim();
+        let email = document.getElementsByName("email")[0].value.trim();
+        let password = document.getElementsByName("password")[0].value.trim();
+
+        const nameRegex = /^[A-Za-z\s]+$/;
+        const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        const passRegex = /^(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}$/;
+
+        if (!nameRegex.test(fullName)) return false;
+        if (!emailRegex.test(email)) return false;
+        if (!passRegex.test(password)) return false;
+
+        return true;
+      }
+
+      // ADMIN FORM VALIDATION
+      const adminForm = document.getElementById("adminForm");
+      adminForm.addEventListener("submit", function (event) {
+        if (!validateAdmin()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        adminForm.classList.add("was-validated");
+      });
+
+      function validateAdmin() {
+        let adminName = document.getElementsByName("adminName")[0].value.trim();
+        let adminEmail = document.getElementsByName("adminEmail")[0].value.trim();
+        let password = adminForm.querySelector("input[name='password']").value.trim();
+
+        const nameRegex = /^[A-Za-z\s]+$/;   // admin name allow letters & numbers
+        const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+		const passRegex = /^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+        if (!nameRegex.test(adminName)) return false;
+        if (!emailRegex.test(adminEmail)) return false;
+        if (!passRegex.test(password)) return false;
+
+        return true;
+      }
+
+    });
+  </script>
 
 </body>
 </html>

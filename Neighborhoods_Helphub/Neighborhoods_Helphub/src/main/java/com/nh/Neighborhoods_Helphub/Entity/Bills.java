@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
 
 
 @Entity
@@ -19,10 +20,18 @@ public class Bills {
 	@ManyToOne
     @JoinColumn(name = "user_id")
     private users user;
+	@NotBlank(message = "House Rent is required")
 	private String houseRent;
+
+	@NotBlank(message = "Water Bill is required")
 	private String waterBill;
+
+	@NotBlank(message = "Electricity Bill is required")
 	private String electricityBill;
+
+	@NotBlank(message = "Maintenance Charges are required")
 	private String maintenanceCharges;
+
 	private String dueDate;
 	private LocalDateTime paidDate;
 	private String status;

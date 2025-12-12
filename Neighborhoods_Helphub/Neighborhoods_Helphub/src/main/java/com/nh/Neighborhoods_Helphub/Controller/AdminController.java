@@ -3,6 +3,8 @@ package com.nh.Neighborhoods_Helphub.Controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nh.Neighborhoods_Helphub.Entity.users;
@@ -22,13 +25,19 @@ public class AdminController {
 	UsersService usersService;
 	
 	@GetMapping("/viewAllData")
-	public List<users> viewAllData(){
-	  return	usersService.viewAll();
-	  
+	public List<users> viewAllData(@RequestParam int page,
+	                               @RequestParam int size) {
+
+	    return usersService.getPagedUsers(page, size);
+	}
+	@GetMapping("/viewAllDataforBills")
+	public List<users> viewAllDataforBills( ) {
+
+	    return usersService.viewAllDataforBills();
 	}
 	
 	@PostMapping("/addData")
-     public void addData(@RequestBody users s) {
+     public void addData(@Valid@RequestBody users s) {
 		usersService.addData(s);
 
 	}

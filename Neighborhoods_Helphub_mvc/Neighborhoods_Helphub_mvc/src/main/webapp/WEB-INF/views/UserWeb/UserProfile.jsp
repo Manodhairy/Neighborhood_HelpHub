@@ -101,7 +101,7 @@
               <div class="col-md-6">
                 <label class="form-label">Full Name</label>
                 <input type="text" name="fullName" class="form-control" 
-                       value="${userList.fullName}" required>
+                       value="${userList.fullName}" readonly>
               </div>
 
               <div class="col-md-6">
@@ -113,19 +113,19 @@
               <div class="col-md-6">
                 <label class="form-label">Mobile No</label>
                 <input type="text" name="mobile_no" class="form-control" 
-                       value="${userList.mobile_no}">
+                       value="${userList.mobile_no}" required>
               </div>
 
               <div class="col-md-6">
                 <label class="form-label">Flat No</label>
                 <input type="text" name="flat_no" class="form-control" 
-                       value="${userList.flat_no}">
+                       value="${userList.flat_no}"readonly >
               </div>
 
               <div class="col-md-4">
                 <label class="form-label">Age</label>
                 <input type="number" name="age" class="form-control" 
-                       value="${userList.age}">
+                       value="${userList.age}"required>
               </div>
 
               
@@ -139,18 +139,18 @@
               <div class="col-md-6">
                 <label class="form-label">Workplace</label>
                 <input type="text" name="workplace" class="form-control" 
-                       value="${userList.workplace}">
+                       value="${userList.workplace}" required>
               </div>
 
               <div class="col-md-6">
                 <label class="form-label">Experience</label>
                 <input type="text" name="experience" class="form-control" 
-                       value="${userList.experience}">
+                       value="${userList.experience}" required>
               </div>
 
               <div class="col-md-12">
                 <label class="form-label">Message</label>
-                <textarea class="form-control" name="message" rows="3">${userList.message}</textarea>
+                <textarea class="form-control" name="message" rows="3" required >${userList.message}</textarea>
               </div>
 
               <h5 class="mt-4"><i class="fa fa-link me-2 text-primary"></i>Social Links</h5>

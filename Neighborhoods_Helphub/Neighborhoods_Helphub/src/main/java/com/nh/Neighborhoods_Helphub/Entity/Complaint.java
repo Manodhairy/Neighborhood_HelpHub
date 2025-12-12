@@ -20,7 +20,7 @@ public class Complaint {
 	    @ManyToOne
 	    @JoinColumn(name = "user_id")
 	    private users user;
-
+           
 	    private String subject;
 	    private String message;
 	    private String complaintStatus = "Pending";

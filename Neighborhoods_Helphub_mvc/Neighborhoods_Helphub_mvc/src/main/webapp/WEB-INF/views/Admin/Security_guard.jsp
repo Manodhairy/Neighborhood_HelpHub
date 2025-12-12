@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Sunshine Heights - Add User</title>
+    <title>Sunshine Heights </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Admin panel" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -106,49 +106,56 @@
 
 					            <div class="card shadow-sm mt-3">
 					                <div class="card-body">
-					                    <form method="post" action="AddSecurityGuard">
+										<form id="securityGuardForm" method="post" action="AddSecurityGuard" novalidate>
 
-					                        <div class="mb-3">
-					                            <label class="form-label">Guard Name</label>
-					                            <input type="text" name="guardName" class="form-control" required>
-					                        </div>
+										    <div class="mb-3">
+										        <label class="form-label">Guard Name</label>
+										        <input type="text" name="guardName" class="form-control" required>
+										        <div class="invalid-feedback">Please enter guard name</div>
+										    </div>
 
-					                        <div class="mb-3">
-					                            <label class="form-label">Contact</label>
-					                            <input type="text" name="contact" maxlength="15" class="form-control" required>
-					                        </div>
+										    <div class="mb-3">
+										        <label class="form-label">Contact</label>
+										        <input type="text" name="contact" class="form-control"
+										               pattern="[0-9]{10}" maxlength="10" required>
+										        <div class="invalid-feedback">Enter valid 10 digit contact number</div>
+										    </div>
 
-					                        <div class="mb-3">
-					                            <label class="form-label">Assigned Area</label>
-					                            <input type="text" name="assignedArea" class="form-control" required>
-					                        </div>
+										    <div class="mb-3">
+										        <label class="form-label">Assigned Area</label>
+										        <input type="text" name="assignedArea" class="form-control" required>
+										        <div class="invalid-feedback">Enter assigned area</div>
+										    </div>
 
-					                        <div class="mb-3">
-					                            <label class="form-label">Shift</label>
-					                            <select name="shift" class="form-select" required>
-					                                <option value="">-- Select Shift --</option>
-					                                <option>Morning</option>
-					                                <option>Evening</option>
-					                                <option>Night</option>
-					                            </select>
-					                        </div>
+										    <div class="mb-3">
+										        <label class="form-label">Shift</label>
+										        <select name="shift" class="form-select" required>
+										            <option value="">-- Select Shift --</option>
+										            <option>Morning</option>
+										            <option>Evening</option>
+										            <option>Night</option>
+										        </select>
+										        <div class="invalid-feedback">Please select shift</div>
+										    </div>
 
-					                        <div class="mb-3">
-					                            <label class="form-label">Status</label>
-					                            <select name="status" class="form-select" required>
-					                                <option value="">-- Select Status --</option>
-					                                <option>Active</option>
-					                                <option>On Leave</option>
-					                                <option>Inactive</option>
-					                            </select>
-					                        </div>
+										    <div class="mb-3">
+										        <label class="form-label">Status</label>
+										        <select name="status" class="form-select" required>
+										            <option value="">-- Select Status --</option>
+										            <option>Active</option>
+										            <option>On Leave</option>
+										            <option>Inactive</option>
+										        </select>
+										        <div class="invalid-feedback">Please select status</div>
+										    </div>
 
-					                        <div class="text-center mt-4">
-					                            <button type="submit" class="btn btn-primary px-5 me-2">Submit</button>
-					                            <button type="reset" class="btn btn-secondary px-5">Reset</button>
-					                        </div>
+										    <div class="text-center mt-4">
+										        <button type="submit" class="btn btn-primary px-5 me-2">Submit</button>
+										        <button type="reset" class="btn btn-secondary px-5">Reset</button>
+										    </div>
 
-					                    </form>
+										</form>
+
 					                </div>
 					            </div>
 
@@ -669,6 +676,15 @@
 
 	    </div>
 
+		<script>
+		    document.getElementById('securityGuardForm').addEventListener('submit', function (event) {
+		        if (!this.checkValidity()) {
+		            event.preventDefault();
+		            event.stopPropagation();
+		        }
+		        this.classList.add('was-validated');
+		    });
+		</script>
 
 
 </body>

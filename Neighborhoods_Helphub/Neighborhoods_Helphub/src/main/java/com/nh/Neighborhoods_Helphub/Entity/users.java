@@ -3,6 +3,10 @@ package com.nh.Neighborhoods_Helphub.Entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 public class users {
@@ -10,16 +14,44 @@ public class users {
 	@Id
 	private int id;
 	@Column(name = "full_name")
+	@NotBlank(message = "Full name is required")
+	@Size(min = 3, max = 40, message = "Full name must be between 3 and 40 characters")
 	private String fullName;
+
+	@NotBlank(message = "Email is required")
+	@Email(message = "Enter a valid email address")
 	private String email;
+
+	@NotBlank(message = "Password is required")
+	@Size(min = 6, max = 16, message = "Password must be between 6 and 16 characters")
 	private String password;
+
+	@NotBlank(message = "Mobile number is required")
+	@Pattern(regexp = "^[6-9][0-9]{9}$", message = "Enter a valid 10-digit mobile number")
 	private String mobile_no;
+
+	@NotBlank(message = "Flat number is required")
+	@Pattern(regexp = "^[A-Za-z0-9- ]+$", message = "Flat number must contain letters, numbers, or '-'")
 	private String flat_no;
+
+	@NotBlank(message = "Age is required")
+	@Pattern(regexp = "^[0-9]{1,3}$", message = "Age must be a valid number")
 	private String age;
+
+	@NotBlank(message = "Gender is required")
+	@Pattern(regexp = "Male|Female|Other", message = "Gender must be Male, Female, or Other")
 	private String gender;
+
+	@NotBlank(message = "Relation to head is required")
 	private String relation_to_head;
+
+	@NotBlank(message = "Occupation is required")
 	private String occupation;
+
+	@NotBlank(message = "Aadhar number is required")
+	@Pattern(regexp = "^[0-9]{12}$", message = "Aadhar must be a 12-digit number")
 	private String adhar_no;
+
 	private String member_status;
 	private String date;
 	
