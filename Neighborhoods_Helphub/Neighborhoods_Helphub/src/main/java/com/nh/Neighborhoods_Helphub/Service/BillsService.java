@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.nh.Neighborhoods_Helphub.Entity.Bills;
@@ -72,9 +74,12 @@ public class BillsService {
 		
 	}
 
-	public List<Bills> findAll() {
-		return billRepo.findAll();
+	public List<Bills> findAll(int page, int size) {
+		PageRequest pageable = PageRequest.of(page - 1, size);
 		
+		
+		Page<Bills> pageResult =	billRepo.findAll(pageable);
+		 return pageResult.getContent();
 	}
 
 	public void UpdateBill(Bills bill) {
@@ -86,12 +91,18 @@ public class BillsService {
 			data.setWaterBill(bill.getWaterBill());
 			data.setElectricityBill(bill.getElectricityBill());
 			data.setMaintenanceCharges(bill.getMaintenanceCharges());
+			data.setDueDate(bill.getDueDate());
 			data.setStatus(bill.getStatus());
 			
 			billRepo.save(data);
 			
 			
 		}
+		
+	}
+
+	public long billCount() {
+		return billRepo.count();
 		
 	}
 }

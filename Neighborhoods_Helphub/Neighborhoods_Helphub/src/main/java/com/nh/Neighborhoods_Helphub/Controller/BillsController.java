@@ -3,12 +3,15 @@ package com.nh.Neighborhoods_Helphub.Controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nh.Neighborhoods_Helphub.Entity.Bills;
@@ -22,15 +25,15 @@ public class BillsController {
 	BillsService billsService;
 	
       @PostMapping("/AddBills/{id}")
-      public Bills AddBills(@RequestBody Bills bills ,@PathVariable int id) {
+      public Bills AddBills(@Valid@RequestBody Bills bills ,@PathVariable int id) {
     	  
     	 return  billsService.save(bills,id);
       }
       
       
       @GetMapping("/ViewAllBill")
-      public List<Bills> ViewAllBill() {
-    	 return  billsService.findAll();
+      public List<Bills> ViewAllBill(@RequestParam int page,@RequestParam int size) {
+    	 return  billsService.findAll(page,size);
       }
       
       @GetMapping("/ViewBill/{id}")
@@ -50,4 +53,9 @@ public class BillsController {
       public void UpdateBill(@RequestBody Bills bill) {
     	  billsService.UpdateBill(bill);
       }
+      
+      @GetMapping("/billCount")
+  	public long billCount() {
+  		return billsService.billCount();
+  	}
 }

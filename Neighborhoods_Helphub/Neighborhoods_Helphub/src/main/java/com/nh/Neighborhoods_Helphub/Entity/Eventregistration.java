@@ -2,16 +2,25 @@ package com.nh.Neighborhoods_Helphub.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Eventregistration {
 
 	@Id
 	private int eId;
-    private String eventName;
-    private String organizer;
-    private String eventDate;
-    private String venue;
+	@NotBlank(message = "Event name is required")
+	private String eventName;
+
+	@NotBlank(message = "Organizer name is required")
+	private String organizer;
+
+	@NotBlank(message = "Event date is required")
+	private String eventDate;
+
+	@NotBlank(message = "Venue is required")
+	private String venue;
+
     private String onlineLink;
     private String message;
     private String fullName;

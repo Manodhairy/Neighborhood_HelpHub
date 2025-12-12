@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.nh.Neighborhoods_Helphub.Entity.users;
@@ -15,10 +17,14 @@ public class UsersService {
 	@Autowired
 	UsersRepo usersRepo;
 
-	public List<users> viewAll() {
-	 List<users> list=usersRepo.findAll();	
-	 return list;
+	public List<users> getPagedUsers(int page, int size) {
+	    PageRequest pageable = PageRequest.of(page - 1, size);  
+
+	    Page<users> pageResult = usersRepo.findAll(pageable);
+
+	    return pageResult.getContent();
 	}
+
 
 	public void addData(users s) {
 		usersRepo.save(s);
@@ -61,5 +67,10 @@ public class UsersService {
 	public long inactivemember() {
 		  long count=  usersRepo.countByMemberStatus("inactive");
 		return count;
+	}
+
+
+	public List<users> viewAllDataforBills() {
+		return usersRepo.findAll();
 	}
 }
