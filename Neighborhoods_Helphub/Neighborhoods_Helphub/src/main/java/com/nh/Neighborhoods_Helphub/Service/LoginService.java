@@ -1,5 +1,7 @@
 package com.nh.Neighborhoods_Helphub.Service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,4 +30,22 @@ public class LoginService {
 		return  usersRepo.findByFullNameAndEmailAndPassword(u.getFullName(),u.getEmail(),u.getPassword());
 		
 	}
+
+	public Optional<users> sendOtp(String email) {
+		return usersRepo.findByEmail(email);
+		
+	}
+
+	public void UpdatePassword(String email,users user) {
+		Optional<users> data=usersRepo.findByEmail(email);
+		
+		if(data.isPresent()) {
+			users u=data.get();
+		     u.setPassword(user.getPassword());
+		     
+		     usersRepo.save(u); 
+		}
+	}
+
+	
 }
