@@ -94,5 +94,16 @@ public class HomeController {
 	public String BillsPage() {
 		return "redirect:/ViewAllBill";
 	}
+	
+	@GetMapping("/forgetPassword")
+	public String forgetPassword() {
+		return "Login/VerifyEmail";
+	}
+	
+	@GetMapping("/LoginPage")
+	public String LoginPage() {
+		 return "Login/LoginForm";
+	}
+	
 }
 

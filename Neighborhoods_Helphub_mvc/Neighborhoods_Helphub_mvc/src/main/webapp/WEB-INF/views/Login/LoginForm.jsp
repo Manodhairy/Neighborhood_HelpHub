@@ -101,7 +101,7 @@
 			      <input type="checkbox" class="form-check-input" id="userRemember">
 			      <label class="form-check-label" for="userRemember">Remember me</label>
 			    </div>
-			    <a href="#" class="text-muted border-bottom border-dashed">Forget Password</a>
+			    <a href="forgetPassword" class="text-muted border-bottom border-dashed">Forget Password</a>
 			  </div>
 
 			  <div class="d-grid">
@@ -140,7 +140,7 @@
 			      <input type="checkbox" class="form-check-input" id="adminRemember">
 			      <label class="form-check-label" for="adminRemember">Remember me</label>
 			    </div>
-			    <a href="#" class="text-muted border-bottom border-dashed">Forget Password</a>
+			    <a href="forgetPassword" class="text-muted border-bottom border-dashed">Forget Password</a>
 			  </div>
 
 			  <div class="d-grid">
@@ -153,7 +153,9 @@
 
           <!-- SWITCH BUTTON -->
           <button id="switchBtn" class="switch-btn">Switch to Admin Login</button>
-
+		  <p class="mt-auto mb-0">
+		                          <script>document.write(new Date().getFullYear())</script> © Sunshine Heights 
+		                      </p>
          
         </div>
       </div>
