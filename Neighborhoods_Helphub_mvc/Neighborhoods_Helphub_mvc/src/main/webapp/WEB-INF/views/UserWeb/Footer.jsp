@@ -72,15 +72,14 @@
               <li class="mb-0">
                 <a href="contact-us-1.html">Help Center</a>
               </li>
-              <li class="mb-0"><a href="about-us.html">About Us</a></li>
-              <li class="mb-0"><a href="contact-us.html">Contact Us</a></li>
-              <li class="mb-0"><a href="page-careers.html">Careers</a></li>
+              <li class="mb-0"><a href="HomeData">Home</a></li>
+              <li class="mb-0"><a href="Neighbour">Neighborhood</a></li>
+              <li class="mb-0"><a href="EventInfo">Event</a></li>
               <li class="mb-0">
-                <a href="blog-grid-4-columns.html">Blog</a>
+                <a href="shops">Shop</a>
               </li>
-              <li class="mb-0"><a href="#">Our Location</a></li>
-              <li class="mb-0"><a href="#">Privacy Policy</a></li>
-              <li class="mb-0"><a href="sitemap.html">Sitemap</a></li>
+              <li class="mb-0"><a href="contact">Contact Us</a></li>
+             
             </ul>
           </div>
 		  <div class="col-md-6 col-lg-4 mb-5 mb-md-0">

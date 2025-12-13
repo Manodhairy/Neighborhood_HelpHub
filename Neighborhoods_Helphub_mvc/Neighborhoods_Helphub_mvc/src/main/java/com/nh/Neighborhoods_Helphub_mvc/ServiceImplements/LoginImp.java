@@ -30,4 +30,22 @@ public class LoginImp {
 		
 	}
 
+
+	public Integer sendOtp(String email) {
+		 return  restTemplate.getForObject(baseUrl + "sendOtp/" + email, int.class);
+		
+	}
+
+
+	
+
+
+	public void Updatepassword(String email, users u) {
+		restTemplate.put(baseUrl + "UpdatePasswordLogin/" + email , u);
+		
+	}
+
+
+	
+
 }

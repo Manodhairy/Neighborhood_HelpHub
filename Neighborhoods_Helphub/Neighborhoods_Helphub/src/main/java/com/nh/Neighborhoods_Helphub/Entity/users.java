@@ -39,7 +39,6 @@ public class users {
 	private String age;
 
 	@NotBlank(message = "Gender is required")
-	@Pattern(regexp = "Male|Female|Other", message = "Gender must be Male, Female, or Other")
 	private String gender;
 
 	@NotBlank(message = "Relation to head is required")

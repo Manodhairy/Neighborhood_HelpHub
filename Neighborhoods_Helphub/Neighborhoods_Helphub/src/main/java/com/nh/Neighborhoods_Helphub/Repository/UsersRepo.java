@@ -1,5 +1,7 @@
 package com.nh.Neighborhoods_Helphub.Repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,6 +16,9 @@ public interface UsersRepo extends JpaRepository<users, Integer> {
 	long countByMemberStatus(@Param("status") String status);
 
 	users findByFullNameAndEmailAndPassword(String full_name, String email, String password);
+
+
+	 Optional<users> findByEmail(String email);
 
 
 }

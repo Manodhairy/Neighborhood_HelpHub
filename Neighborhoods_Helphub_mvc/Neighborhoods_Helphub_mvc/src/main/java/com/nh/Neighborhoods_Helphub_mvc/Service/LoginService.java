@@ -26,4 +26,16 @@ public class LoginService {
 		return  loginImp.userlogin(u);
 		
 	}
+
+	public Integer sendOtp(String email) {
+		return loginImp.sendOtp(email);
+		
+	}
+
+	public void Updatepassword(String email, String newPassword) {
+		users u=new users();
+		u.setPassword(newPassword);
+		loginImp.Updatepassword(email,u);
+		
+	}
 }
